@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding-top: 200px;
+            padding-bottom: 200px;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            min-height: 800px;
+            max-height: fit-content;
+            display: flex;
+            justify-content: space-around;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 100px 20px;
+            align-self: center;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            outline: black solid;
+            background-color: {{ col }};
+        }
+
+    </style>
+</head>
+<body>
+<h1>
+    Welcome!
+</h1>
+<div class="container">
+    {% for i in range(0,num) %}
+    <div class="box"></div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
