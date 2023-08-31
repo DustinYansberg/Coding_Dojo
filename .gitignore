@@ -36,6 +36,12 @@
 ehthumbs.db
 Thumbs.db
 
-# Any video files --namely the ones found in the videoPreview#
+# Any video files #
 #############################################################
+# --namely the ones found in the videoPreview
 *.mp4
+
+
+# Belt Exams #
+##############
+.\belt_exams
