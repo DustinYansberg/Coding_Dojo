@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+    font-family:Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: whitesmoke;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(80, 77, 77);
+}
+
+.nav-links{
+    width: 40%;
+    display: flex;
+}
+
+li{
+    margin: auto; 
+    display: flex;
+}
+
+.btn{
+    color: whitesmoke;
+    background-color: teal;
+    border: 2px solid black;
+    box-shadow: 3px 3px black;
+}
+
+

@@ -1,0 +1,211 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+/* Nav Bar */
+.nav {
+    background-color: black;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+}
+
+/* Nav Bar Children */
+
+.links {
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.nav button {
+    background-color: #0a9cb3;
+    color: #fefefe;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4%;
+}
+
+/* Nav links PROFILE List item */
+
+.links li:nth-child(1) {
+    font-size: 24pt;
+}
+
+/* Main content adjustments */
+
+.main {
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.col1 {
+    flex: 2;
+}
+
+.col2 {
+    flex: 1;
+}
+
+.col2>div {
+    border: 2px solid gray;
+    margin-bottom: 10px;
+}
+
+/* CARD */
+.card {
+    border: 2px solid gray;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.card_banner {
+    background-color: teal;
+    height: 75px;
+    width: 100%;
+
+}
+
+.card_body {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+
+}
+
+p {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    font-size: 14pt;
+}
+
+#user_image {
+    height: 50px;
+    background-color: white;
+    padding: 0.2%;
+    border-radius: 50%;
+    border: 2px solid gray;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+#location_icon {
+    height: 14pt;
+}
+
+#cog_wheel {
+    height: 14pt;
+}
+
+/* CARD END */
+
+/* EDUCATION */
+
+.education {
+    border: 2px solid gray;
+    width: 90%;
+}
+
+.education h3 {
+    background-color: #141414;
+    color: #fefefe;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.eduList {
+    list-style-type: none;
+}
+
+.eduList > li{
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+/* EDU LIST */
+.eduList li:nth-child(1){
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.eduList li:nth-child(2){
+    font-size: larger;
+    font-weight: bolder;
+    color: gray
+}
+
+.eduList li:nth-child(3){
+    font-size: larger;
+}
+
+/* EDUCATION END */
+
+/* CONNECTION REQUESTS */
+.conn_images {
+    height: 35px;
+    border-radius: 50%;
+}
+
+.connReqBanner {
+    display: flex;
+    justify-content: space-around;
+    color: #fefefe;
+    background-color: #141414;
+    padding: 10px;
+}
+
+.connReqContent div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2px;
+}
+
+.connReqContent {
+    padding: 10px;
+}
+
+/* CONNECTION REQUESTS END */
+
+/* YOUR CONNECTIONS */
+
+.yourConnBanner {
+    display: flex;
+    justify-content: space-around;
+    color: #fefefe;
+    background-color: #141414;
+    padding: 10px;
+}
+
+.yourConnContent {
+    padding: 4px;
+}
+
+.connList {
+    list-style-type: none;
+}
+
+.connList>li {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+}
+
+.connFooter{
+    height: 20px;
+    border: 2px solid gray;
+    padding: 8px;
+}
+/* YOUR CONNECTIONS END */

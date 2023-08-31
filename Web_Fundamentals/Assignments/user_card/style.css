@@ -1,0 +1,64 @@
+
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+}
+
+/* classes--DIVs */
+.card {
+    min-width: 50%;
+    border: 2px solid gray;
+    height:fit-content;
+}
+
+.card_banner {
+    background-color: teal;
+    height: 75px;
+    overflow: visible;
+}
+
+.card_body {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    
+}
+
+/* Classes--P's */
+
+p {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    font-size: 14pt;
+}
+
+/* Images */
+#user_image {
+    height: 50px;
+    background-color: white;
+    padding: 0.2%;
+    border-radius: 50%;
+    border: 2px solid gray;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+#location_icon {
+    height: 14pt;
+}
+
+#cog_wheel {
+    height: 14pt;
+}

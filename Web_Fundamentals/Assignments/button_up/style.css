@@ -1,0 +1,40 @@
+button {
+    height: 40px;
+    font-size: x-large;
+}
+
+.first button{
+    color: teal;
+    font-weight: bold;
+    background-color: whitesmoke;
+    border-color: teal;
+    border-radius: 50px;
+    width: 200px;
+    display: block;
+    margin: 20px;
+    margin-top: 40px;
+}
+
+.second button{
+    background-color: teal;
+    color: whitesmoke;
+    border-radius: 50%;
+    display: block;
+    margin: 20px;
+    width: 40px;
+    border: 0px;
+    
+}
+
+.third button{
+    background-color: rgb(66, 69, 196);
+    color: aliceblue;
+    margin-left: 20px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 35px;
+    border: 2px solid black;
+    box-shadow: 3px 3px black;
+
+}

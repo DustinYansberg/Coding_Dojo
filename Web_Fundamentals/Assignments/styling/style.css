@@ -1,0 +1,22 @@
+.main_header {
+    background-color: black;
+    color: whitesmoke;
+    padding-bottom: 0%;
+}
+
+.main_header>span {
+    color: cyan;
+}
+
+.second_header{
+    background-color: blueviolet;
+    color: whitesmoke;
+    font-style: italic;
+    text-align: center;
+}
+
+.contact{
+    text-align: right;
+    font-size: large;
+    background-color: aqua;    
+}

@@ -1,0 +1,42 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+}
+
+.userCard {
+    width: 325px;
+    background-color: blanchedalmond;
+    padding: 30px 20px;
+    outline: auto;
+}
+
+.userCard .topRow {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-bottom: 15px;
+}
+
+.userCard .userName {
+    flex: 2;
+    margin-right: 1%;
+}
+
+.userCard .likes {
+    flex: 1;
+    display: flex;
+    gap: 3px
+}
+
+.userCard .likeButton {
+    flex: 1;
+    box-shadow: 4px 4px black;
+    background-color: #ffd966;
+}

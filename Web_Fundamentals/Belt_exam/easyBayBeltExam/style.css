@@ -1,0 +1,169 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+body {
+    margin: 10px 10%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerImg {
+    height: 50px;
+}
+
+.logo {
+    background-color: #00d1b2;
+}
+
+.companyName {
+    font-weight: bolder;
+    font-size: 38pt;
+    ;
+}
+
+.searchBarAndButton {
+    width: 40%;
+    border: 3px solid black;
+    border-radius: 15px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchBar {
+    font-size: 14pt;
+    height: 100%;
+    flex: 8;
+    border-radius: 15px;
+    border: 0px
+}
+
+.searchBarAndButton img {
+    flex: 1;
+    margin-right: 3%;
+}
+
+.signIn {
+    font-size: 14pt;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NAV BAR */
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    border: solid black;
+    border-width: 0px 0px 5px 0px;
+    padding: 10px 0px;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TAG LINE */
+
+.tagLine {
+    padding: 10px 5%;
+    font-size: 30pt;
+    text-align: center;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~MAIN CONTENT */
+
+.mainContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Left side Main */
+
+.mainLeft {
+    display: flex;
+}
+
+.mlLeft {
+    background-color: #00d1b2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.mlLeft p {
+    font-size: 24pt;
+    text-align: center;
+    color: whitesmoke;
+}
+
+/* Right side Main */
+
+.mainRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mainRight>p {
+    background-color: #00d1b2;
+    color: whitesmoke;
+    font-size: 24pt;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+/* Plant Images */
+
+.plantLinks {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 40px;
+    background-color: #aae8d8;
+    margin-top: 20px;
+}
+
+.plantLinks div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.plantLinks div img {
+    height: 150px;
+    border-radius: 50%;
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~COOKIE BAR */
+
+.cookieBar {
+    position: fixed;
+    bottom: 0px;
+    padding: 20px;
+    outline: auto;
+    margin-right: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    background-color: white;
+}
+
+.cookieBar p {
+    font-size: 20pt;
+}
+
+.cookieBar button {
+    width: 130px;
+    padding: 5px;
+    background-color: #00d1b2;
+    color: whitesmoke;
+}

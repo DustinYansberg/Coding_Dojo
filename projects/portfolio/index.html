@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Style sheet for SVG graphics of skill icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
+    <!-- My style sheet -->
+    <link rel="stylesheet" href="style.css" />
+    <title>DRY.BOY</title>
+  </head>
+
+  <body>
+    <div id="top"></div>
+    <!-- Nav Bar -->
+    <div class="nav">
+      <!-- found at https://icons8.com/icon/Y9aaMCohZ2Md/menu can
+         change color and get new SVG later for dark mode adjustments -->
+      <div class="menuDropdown">
+        <img
+          class="dropbtn"
+          id="dropbtn"
+          width="30"
+          height="30"
+          src="./assets/Icons/menu-light.png"
+          onclick="ToggleMenu()"
+        />
+        <div id="menuDropdown" class="menu-Content" onmouseleave="ToggleMenu()">
+          <a href="#skillBlock">Skills</a>
+          <a href="#projects">Projects</a>
+          <button
+            onclick="ToggleDarkMode()"
+            id="darkModeToggle"
+            class="darkModeToggle"
+          >
+            Dark Mode
+          </button>
+        </div>
+      </div>
+      <a href="#top" class="linkToTop">Yansberg.</a>
+      <button class="contact">Contact Me.</button>
+    </div>
+
+    <!-- Title -->
+    <div class="block-b title">
+      <!-- name, tagline -->
+      <p class="nameAndTagline">
+        <span class="firstName">Dustin</span>
+        <span class="lastName">Yansberg</span>
+        <span class="tagline">FULL-STACK SOFTWARE ENGINEER</span>
+      </p>
+
+      <!-- buttons -->
+      <div class="titleButtons">
+        <!-- <button class="aboutMe">ABOUT ME</button> -->
+        <button onclick="OpenResume()" class="hireMe">RESUME</button>
+      </div>
+    </div>
+
+    <!-- elevator pitch and resume -->
+    <div class="block-emphasis elevatorPitch">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore sit
+        quia eum consectetur suscipit libero et illo nulla eaque provident,
+        minus architecto doloribus,
+        <span id="f-black"
+          >porro expedita ad perspiciatis, molestias ratione quod.</span
+        >
+      </p>
+    </div>
+
+    <!-- skills -->
+
+    <div class="block-s" id="skillBlock">
+      <h1 class="skills">Skills</h1>
+      <div class="skillList">
+        <div class="skillsRow">
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+            />
+            <p class="skill-name">Python</p>
+          </div>
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            />
+            <p class="skill-name">Javascript</p>
+          </div>
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+            />
+            <p class="skill-name">C++</p>
+          </div>
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"
+            />
+            <p class="skill-name">Java</p>
+          </div>
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+            />
+            <p class="skill-name">C#</p>
+          </div>
+        </div>
+        <div class="skillsRow">
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+            />
+            <p class="skill-name">MySQL</p>
+          </div>
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain-wordmark.svg"
+            />
+            <p class="skill-name">git</p>
+          </div>
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+            />
+            <p class="skill-name">linux</p>
+          </div>
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg"
+            />
+            <p class="skill-name">node.js</p>
+          </div>
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" 
+            />
+            <p class="skill-name">bash</p>
+          </div>
+        </div>
+        <div class="skillsRow">
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg"
+            />
+            <p class="skill-name">CSS3</p>
+          </div>
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-plain.svg"
+            />
+            <p class="skill-name">Google Cloud</p>
+          </div>
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg"
+            />
+            <p class="skill-name">Jupyter</p>
+          </div>
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+            />
+            <p class="skill-name">NumPy</p>
+          </div>
+          <div class="skill-img-name">
+            <img
+              class="img-100"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg"
+            />
+            <p class="skill-name">PyCharm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- tag line -->
+    <div class="block-emphasis">
+      <p>
+        Volutpat odio facilisis mauris sit amet massa vitae. Praesent tristique
+        magna sit amet purus gravida quis blandit.
+      </p>
+    </div>
+
+    <!-- Projects -->
+    <div id="projects" class="block-m">
+      <h1>Projects</h1>
+
+      <!-- first project row -->
+      <div class="project-row">
+        <div class="project-l project">
+          <img
+            onmouseover="ProjectMouseOver(this.nextElementSibling)"
+            src="./assets/images/projects/Sentiment-Analysis1.webp"
+            alt="Sentimental Analysis project"
+          />
+          <div
+            id="project1"
+            class="project-name"
+            onmouseleave="ProjectMouseOver(this)"
+          >
+            <h3>Sentimental Analysis</h3>
+            <p>
+              This is a project where I analyzed the emotional connotations of
+              restaurant reviews
+            </p>
+          </div>
+        </div>
+
+        <div class="project-s project">
+          <img
+            onmouseover="ProjectMouseOver(this.nextElementSibling)"
+            src="./assets/images/projects/knn4.png"
+            alt="Sentimental Analysis project"
+          />
+          <div
+            id="project2"
+            class="project-name"
+            onmouseleave="ProjectMouseOver(this)"
+          >
+            <h3>Optimal Delivery Route</h3>
+            <p>
+              This is a project where I determined the optimal delivery route of
+              packages in a city with various constraints.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- second project row -->
+      <div class="project-row">
+        <div class="project-s project">
+          <img
+            onmouseover="ProjectMouseOver(this.nextElementSibling)"
+            src="./assets/images/projects/61cf0858050f4d1b2cf8eefe_Logistics-Inventory-Management.jpeg"
+            alt="Sentimental Analysis project"
+          />
+          <div
+            id="project3"
+            class="project-name"
+            onmouseleave="ProjectMouseOver(this)"
+          >
+            <h3>Inventory Management System</h3>
+            <p>This is a project where I built a system to manage inventory</p>
+          </div>
+        </div>
+        <div class="project-l project">
+          <img
+            onmouseover="ProjectMouseOver(this.nextElementSibling)"
+            src="./assets/images/projects/Imageg79l-1682602936960.avif"
+            alt="Sentimental Analysis project"
+          />
+          <div
+            id="project4"
+            class="project-name"
+            onmouseleave="ProjectMouseOver(this)"
+          >
+            <h3>Flappy Bird</h3>
+            <p>
+              In unity and C#, I recreated flappy bird from the ground up with
+              my own assets and code.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

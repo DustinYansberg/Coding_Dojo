@@ -1,0 +1,5 @@
+.connReqContent div{
+    display: flex;
+    justify-content: space-between;
+    background-color: aliceblue;
+}

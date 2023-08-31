@@ -1,0 +1,117 @@
+*{
+    margin: 0 auto;
+    background-color: antiquewhite;
+}
+.german{
+    height: 100px;
+    margin-bottom: 250px;
+}
+.top{
+background-color: black;
+height: 100%;    
+}
+.middle{
+    background-color: red;
+    height: 100%;    
+}
+.bottom{
+    background-color: gold;
+    height: 100%;    
+}
+
+
+
+.french{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.left{
+    background-color: blue;
+    height: 100%;
+    flex: 1;
+}
+.center{
+    background-color: white;
+    height: 100%;
+    flex: 1;
+}
+.right{
+    background-color: red;
+    height: 100%;
+    flex: 1;
+}
+
+
+
+.colombia{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.colTop{
+    flex:2;
+    background-color: yellow;
+    width: 100%;
+}
+.colMid{
+    flex:1;
+    background-color: blue;
+    width: 100%;
+}
+.colBot{
+    flex:1;
+    background-color: red;
+    width: 100%;
+}
+
+
+
+.japan {
+background-color: white;
+height: 300px;
+margin-bottom: 50px;
+}
+
+.japanCircle{
+    background-color: red;
+    height: 150px;       
+    width: 150px;
+    border-radius: 50%;
+    position: relative;
+    top:25%
+}
+
+
+
+.finland {
+    background-color: blue;
+    height: 300px;
+    width: 100%;
+}
+.topLeft{
+    background-color: white;
+    position: relative;
+    right:40%;
+    width: 20%;
+    height: 125px;
+}
+.topRight{
+    background-color: white;
+}
+.botLeft{
+    background-color: white;
+    position: relative;
+    width: 20%;
+    height: 125px;
+    right:40%;
+    top:15%;
+}
+.botRight{
+    background-color: white;
+}
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dojonary</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Nav Bar -->
+    <div class="nav">
+      <p class="title">Dojonary</p>
+      <input type="text" id="searchBar" value="Search" />
+      <button onclick="logInToLogOut()" class="login">Login</button>
+    </div>
+
+    <!-- Main with two columns -->
+    <div class="main">
+      <!-- column 1 -->
+      <div class="mainCol1">
+        <!-- First block -->
+        <div class="definitionCard">
+          <!-- left side of card -->
+          <div class="defCardLeft">
+            <p class="definitionTitle">ninja</p>
+            <p class="wordType">noun</p>
+            <p class="pluralForm">Plural: <span>ninjas</span></p>
+            <button onclick="alertLikeButtonPressed()" class="likeButton">
+              13 likes
+            </button>
+          </div>
+
+          <!-- right side of card -->
+          <p class="definition">
+            A practitioner skilled in the
+            <a href="http://" target="_blank" rel="noopener noreferrer"
+              >Japanese</a
+            >
+            art of
+            <a href="http://" target="_blank" rel="noopener noreferrer"
+              >ninjutsu</a
+            >
+          </p>
+        </div>
+
+        <!-- Second block -->
+        <div class="definitionCard">
+          <!-- left side of card -->
+          <div class="defCardLeft">
+            <p class="definitionTitle">ninja</p>
+            <p class="wordType">noun</p>
+            <p class="pluralForm">Plural: <span>ninjas</span></p>
+            <button onclick="alertLikeButtonPressed()" class="likeButton">
+              37 likes
+            </button>
+          </div>
+
+          <!-- right side of card -->
+          <p class="definition">
+            A
+            <a href="http://" target="_blank" rel="noopener noreferrer"
+              >Programmer</a
+            >
+            who breaks down problems with
+            <a href="http://" target="_blank" rel="noopener noreferrer">zen</a
+            >-like focus
+          </p>
+        </div>
+      </div>
+
+      <!-- column 2 -->
+      <div class="mainCol2">
+        <!-- First block -->
+        <div class="addDefinition">
+          <p>Dojonary is defined by <span>YOU</span></p>
+          <button
+            onclick="onAddDefClick()"
+            class="addDefButton"
+            id="addDefButton"
+          >
+            Add Definition
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

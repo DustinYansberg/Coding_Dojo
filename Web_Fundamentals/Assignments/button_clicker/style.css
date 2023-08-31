@@ -1,0 +1,140 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+body {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+body>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 5%;
+}
+
+/*1 ~~~~~~~~~~~~~~~   NAV BAR START  ~~~~~~~~~~~~~~~ 1*/
+
+.nav {
+    background-color: #cccccc;
+    height: 100px;
+    position: sticky;
+    top: 0px;
+}
+
+.title {
+    font-size: 48pt;
+}
+
+.nav #searchBar {
+    width: 50%;
+    font-size: large;
+}
+
+.nav .login {
+    color: whitesmoke;
+    background-color: #2b78e4;
+    padding: .5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: large;
+    box-shadow: 4px 4px black;
+    width: 10%;
+}
+
+/*2 ~~~~~~~~~~~~~~~  MAIN  ~~~~~~~~~~~~~~~ 2*/
+
+.main {
+    margin-top: 25px;
+    padding-left: 0%;
+    padding-right: 0%;
+    align-items: flex-start;
+}
+
+.mainCol1 {
+    flex: 2;
+    margin-right: 30px;
+}
+
+.mainCol2 {
+    flex: 1;
+    background-color: cadetblue;
+}
+
+
+/*3 ~~~~~~~~~~~~~~~  Definition Card  ~~~~~~~~~~~~~~~ 3*/
+
+.definitionCard {
+    padding: 50px;
+    outline: auto;
+    margin-bottom: 10px;
+    background-color: chocolate;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.defCardLeft{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.defCardLeft > p{
+    font-size: 18pt;
+    font-weight: lighter;
+}
+
+.defCardLeft .definitionTitle {
+    font-size: 38pt;
+}
+
+.definition{
+    flex: 2;
+    font-size: 28pt;
+    margin-left: 5%;
+}
+
+.pluralForm span{
+    font-style: italic;
+}
+
+.likeButton{
+    background-color: #f2ca4e;
+    margin-top: 15px;
+    font-size: large;
+    box-shadow: 4px 4px black;
+    padding: 5% 10%;
+}
+/*4 ~~~~~~~~~~~~~~~  Right Column  ~~~~~~~~~~~~~~~ 4*/
+/*4 ~~~~~~~~~~~~~~~  Add Definition  ~~~~~~~~~~~~~~~ 4*/
+.addDefinition {
+    font-size: 24pt;
+    outline: auto;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addDefinition p span{
+    font-weight: bold
+}
+
+.addDefButton{
+    background-color: #93c47d;
+    margin-top: 15px;
+    font-size: large;
+    box-shadow: 4px 4px black;
+    padding: 5% 10%;
+    margin-bottom: 5%;
+}

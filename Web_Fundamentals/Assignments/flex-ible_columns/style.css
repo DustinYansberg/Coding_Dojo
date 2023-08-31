@@ -1,0 +1,25 @@
+
+.row{
+    display: flex;
+}
+
+.col{
+    background-color: teal;
+    flex: 1;
+    margin: 1%;
+    text-align: center;
+}
+
+.col-2{
+    background-color: teal;
+    flex: 2;
+    margin: 1%;
+    text-align: center;
+}
+
+.col-3{
+    background-color: teal;
+    flex: 3;
+    margin: 1%;
+    text-align: center;
+}
