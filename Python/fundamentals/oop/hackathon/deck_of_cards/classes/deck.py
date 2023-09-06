@@ -20,7 +20,7 @@ class Deck:
                     str_val = "King"
                 else:
                     str_val = str(i)
-                self.cards.append(card.Card(s, i, str_val))
+                self.cards.append(card.Card(s, 1, str_val))
 
     def show_cards(self):
         for card in self.cards:
@@ -33,5 +33,4 @@ class Deck:
 
     def deal(self):
         dealt_card = self.cards.pop(0)
-        dealt_card.card_info()
-        return self
+        return dealt_card

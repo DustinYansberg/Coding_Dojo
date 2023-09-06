@@ -1,0 +1,38 @@
+INSERT INTO dojos (name) VALUES ("Syracuse");
+INSERT INTO dojos (name) VALUES ("Seattle");
+INSERT INTO dojos (name) VALUES ("Anchorage");
+
+DELETE FROM dojos WHERE id=1;
+DELETE FROM dojos WHERE name="Seattle";
+DELETE FROM dojos WHERE name="Anchorage";
+
+INSERT INTO dojos (name) VALUES ("Syracuse");
+INSERT INTO dojos (name) VALUES ("Seattle");
+INSERT INTO dojos (name) VALUES ("Anchorage");
+
+SELECT * FROM dojos_and_ninjas_schema.dojos LIMIT 0, 1000;
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES("Billy", "Bob", 99, 4);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES("Billy", "Bob", 99, 4);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES("Billy", "Bob", 99, 4);
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES("John", "Johnson", 99, 5);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES("John", "Johnson", 99, 5);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES("John", "Johnson", 99, 5);
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES("Dunston", "Checks in", 99, 6);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES("Dunston", "Checks in", 99, 6);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES("Dunston", "Checks in", 99, 6);
+
+SELECT * FROM ninjas WHERE dojo_id=4;
+SELECT * FROM ninjas WHERE dojo_id=6;
+
+SELECT * FROM dojos WHERE id = (SELECT dojo_id FROM ninjas ORDER BY ID DESC LIMIT 1);
+
+SELECT * FROM ninjas
+JOIN dojos ON dojos.id = ninjas.dojo_id
+WHERE ninjas.id = 6;
+
+
+SELECT * FROM ninjas
+JOIN dojos ON dojos.id = ninjas.dojo_id;
