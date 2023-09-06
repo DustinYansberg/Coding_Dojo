@@ -1,4 +1,4 @@
-from mysql_connection import connectToMySQL
+from flask_app.config.mysql_connection import connectToMySQL
 
 
 class User:
@@ -23,7 +23,7 @@ class User:
         return users
 
     @classmethod
-    def db_insert_user(cls,data):
+    def db_insert_user(cls, data):
         query = """INSERT INTO users (first_name, last_name, email)
         VALUES(%(f_name)s,%(l_name)s,%(email)s);"""
         result = connectToMySQL(cls.DB).query_db(query, data)
