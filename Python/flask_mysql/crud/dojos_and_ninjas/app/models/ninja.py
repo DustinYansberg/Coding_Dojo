@@ -16,8 +16,8 @@ class Ninja:
     @classmethod
     def insert(cls, data):
         query = """
-                INSERT INTO NINJAS(FIRST_NAME, LAST_NAME, AGE, DOJO_ID)
-                VALUES(%(first_name)s,%(last_name)s,%(age)s,%(dojo_id)s)
+        INSERT INTO NINJAS(FIRST_NAME, LAST_NAME, AGE, DOJO_ID)
+        VALUES(%(first_name)s,%(last_name)s,%(age)s,%(dojo_id)s)        
                 """
         return connectToMySQL(cls.DB).query_db(query, data)
 
@@ -35,3 +35,4 @@ class Ninja:
         query = """SELECT * FROM NINJAS WHERE ID = %(ninja_id)s"""
         results = connectToMySQL(cls.DB).query_db(query, ninja_id)
         return results[0]
+

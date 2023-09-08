@@ -19,7 +19,7 @@ def add_dojo():
 
 @app.route('/dojo/<int:dojo_id>/show')
 def show_dojo(dojo_id):
-    dojo = Dojo.get_one(dojo_id)
-    dojo_id = dojo.id
-
-    return render_template('dojo_info.html', dojo_id=dojo_id)
+    data = {"id": dojo_id}
+    print("THIS IS THE DOJO ID THAT WE ARE PASSING INTO Dojo.Ninjas!", dojo_id)
+    dojo = Dojo.ninjas(data)
+    return render_template('dojo_info.html', dojo=dojo)

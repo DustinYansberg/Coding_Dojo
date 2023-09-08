@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="submitted">
+    <h3>Submitted Info</h3>
+    <p>
+        <span class="flex-1">Name:</span><span class="flex-2"> {{name}} </span>
+    </p>
+    <p>
+        Location: <span> {{location}} </span>
+    </p>
+    <p>
+        Favorite Language: <span> {{language}} </span>
+    </p>
+    <p>
+        Comment: <span> {{comment}} </span>
+    </p>
+    <form action="/reset">
+        <button>Reset!</button>
+    </form>
+</div>
+
+
+</body>
+</html>
