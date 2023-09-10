@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="register login-div">
+    <form action="/register_process" method="POST">
+        <div class="p-3 d-flex flex-column gap-2">
+            {% for message in get_flashed_messages(category_filter=["first_name_err",
+            "last_name_err","password_len_err", "email_exist_err", "password_confirm_err"]) %}
+            <p style="font-weight: bold; color:red;">{{message}}</p>
+            {%endfor%}
+            <label for="first_name">First Name:</label>
+            <input id="first_name" name="first_name" type="text">
+            <label for="last_name">Last Name:</label>
+            <input id="last_name" name="last_name" type="text">
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="text">
+            <label for="password">Password:</label>
+            <input id="password" name="password" type="text">
+            <label for="password_confirm">Confirm Password:</label>
+            <input id="password_confirm" name="password_confirm" type="text">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+<div class="login login-div">
+    <h1>LOGIN</h1>
+    <form action="/login_process" method="POST">
+        <div class="p-3 d-flex flex-column gap-2">
+            {% for message in get_flashed_messages(category_filter=["login_err"]) %}
+            <p style="font-weight: bold; color:red;">{{message}}</p>
+            {%endfor%}
+            <label for="email-login">Email:</label>
+            <input id="email-login" name="email-login" type="text">
+            <label for="password-login">Password:</label>
+            <input id="password-login" name="password-login" type="text">
+            <button class="btn btn-primary">Log In</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
