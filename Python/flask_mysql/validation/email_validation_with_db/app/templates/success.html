@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success!</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<p>Success!</p>
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>EMAIL</td>
+        <td>created at</td>
+        <td>Actions:</td>
+    </tr>
+    </thead>
+    {%for email in emails%}
+    <tr>
+        <td>{{email.id}}</td>
+        <td>{{email.email}}</td>
+        <td>{{email.created_at}}</td>
+        <td><a href="/delete/{{email.id}}">Delete</a></td>
+    </tr>
+    {%endfor%}
+</table>
+<a href="/">Restart</a>
+</body>
+</html>
