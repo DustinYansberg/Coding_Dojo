@@ -1,5 +1,6 @@
 from app.config.mysqlconnection import connectToMySQL
 from app import DATABASE
+from app.models import user
 from flask import flash
 
 
@@ -14,6 +15,7 @@ class Recipe:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.user_id = data['user_id']
+        self.user = user.User.get_one_by_id(self.user_id)
 
     @classmethod
     def create(cls, data):

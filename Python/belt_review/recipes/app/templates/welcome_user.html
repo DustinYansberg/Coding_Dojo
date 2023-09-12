@@ -24,19 +24,26 @@
         <tr>
             <th scope="col">Name</th>
             <th scope="col">Under 30 min?</th>
-            <th scope="col">Poster By</th>
+            <th scope="col">Posted By</th>
             <th scope="col">Actions</th>
         </tr>
         </thead>
         <tbody>
 
-        {% for recipe in user.recipes %}
+        {% for recipe in all_recipes %}
         <tr>
             <td>{{recipe.name}}</td>
-            <td>{{recipe.is_quick}}</td>
-            <td>{{recipe.user_id}}</td>
-            <td><a href="/{{recipe.id}}/edit">Edit</a>
+            {% if recipe.is_quick:%}
+            <td>yes</td>
+            {%else%}
+            <td>no</td>
+            {%endif%}
+            <td>{{recipe.user.first_name}}</td>
+            <td>
+                {% if recipe.user_id == user.id%}
+                <a href="/{{recipe.id}}/edit">Edit</a>
                 <a href="/{{recipe.id}}/delete">Delete</a>
+                {%endif%}
                 <a href="/{{recipe.id}}/view">View</a></td>
         </tr>
         {% endfor %}

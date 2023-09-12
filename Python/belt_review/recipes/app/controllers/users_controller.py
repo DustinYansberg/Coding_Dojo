@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, request, session, redirect
-
+from app.models.recipe import Recipe
 from app.models.user import User
 
 
@@ -20,11 +20,14 @@ def login():
 
 @app.route('/home')
 def welcome_page():
+    if 'uuid' not in session:
+        return redirect('/')
+
     user = User.get_user_with_recipes(session['uuid'])
     if not user:
         user = User.get_one_by_id(session['uuid'])
-    print(user.recipes)
-    return render_template('welcome_user.html', user=user)
+    all_recipes = Recipe.get_all()
+    return render_template('welcome_user.html', user=user, all_recipes=all_recipes)
 
 
 @app.route('/register', methods=['POST'])

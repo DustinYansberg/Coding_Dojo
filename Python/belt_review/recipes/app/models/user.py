@@ -3,7 +3,7 @@ from flask_bcrypt import Bcrypt
 from app import DATABASE
 from app import app
 from flask import flash
-from app.models.recipe import Recipe
+from app.models import recipe
 bcrypt = Bcrypt(app)
 import re
 
@@ -150,7 +150,7 @@ class User:
 
             }
 
-            user.recipes.append(Recipe(recipe_data))
+            user.recipes.append(recipe.Recipe(recipe_data))
 
         return user
 
