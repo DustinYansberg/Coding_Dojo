@@ -1,6 +1,7 @@
 from app import DATABASE
+from app import app
 from app.config.mysqlconnection import connectToMySQL
-from app.models.score import Score
+from app.models import score
 from flask import flash
 from flask_bcrypt import Bcrypt
 
@@ -79,6 +80,11 @@ class User :
 
     @classmethod
     def get_user_with_scores(cls, data):
+        """
+        Will be useful to show all score info of one user. Maybe on their profile page.
+        :param data:
+        :return:
+        """
 
         query = """
                 SELECT * FROM 
@@ -104,7 +110,7 @@ class User :
                 'updated_at': row['updated_at']
             }
 
-            user.scores.append(Score(score_data))
+            user.scores.append(score.Score(score_data))
 
         return user
 
