@@ -12,8 +12,6 @@ class User :
     def __init__(self, data):
         self.username = data['username']
         self.id = data['id']
-        self.first_name = data['first_name']
-        self.last_name = data['last_name']
         self.password = data['password']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
@@ -23,10 +21,17 @@ class User :
     def create(cls, data):
         query = """
                 INSERT INTO
-                users(username, first_name, last_name, password)
-                VALUES(%(username)s, %(first_name)s, %(last_name)s, %(password)s)"""
+                users(username, password)
+                VALUES(%(username)s, %(password)s)"""
 
-        return connectToMySQL(DATABASE).query_db(query, data)
+        hashed = bcrypt.generate_password_hash(data['password'])
+
+        user_data = {
+            **data,
+            'password': hashed
+        }
+
+        return connectToMySQL(DATABASE).query_db(query, user_data)
 
     @classmethod
     def get_user_by_id(cls, user_id):
@@ -41,10 +46,10 @@ class User :
 
         results = connectToMySQL(DATABASE).query_db(query, data)
 
-        if not results:
-            return False
+        if results:
+            return cls(results[0])
 
-        return cls(results[0])
+        return False
 
 
     @classmethod
@@ -61,12 +66,12 @@ class User :
         results = connectToMySQL(DATABASE).query_db(query, data)
 
         if results:
-            return False
-
-        return cls(results[0])
+            return cls(results[0])
+        return False
 
     @classmethod
     def login(cls, data):
+
         user = cls.get_user_by_username(data['username'])
 
         if not user:
@@ -102,15 +107,40 @@ class User :
         user = cls(results[0])
 
         for row in results:
-            score_data = {
-                'score': row['score'],
-                'user_id': row['user_id'],
-                'game_id': row['game_id'],
-                'created_at': row['created_at'],
-                'updated_at': row['updated_at']
-            }
+            score_data = \
+                {
+                    'score': row['score'],
+                    'user_id': row['user_id'],
+                    'game_id': row['game_id'],
+                    'created_at': row['created_at'],
+                    'updated_at': row['updated_at']
+                }
 
             user.scores.append(score.Score(score_data))
-
         return user
 
+    @classmethod
+    def register(cls, data):
+        if not cls.validate(data):
+            return False
+        cls.create(data)
+        user = cls.get_user_by_username(data['username'])
+        return user
+
+    @classmethod
+    def validate(cls, data):
+        is_valid = True
+        if len(data['username']) < 4:
+            flash("Username must be 4 or more characters", "username_len_err")
+            is_valid = False
+        if len(data['password']) < 4:
+            flash("password must be 8 characters", "password_len_err")
+            is_valid = False
+        if data['password'] != data['password_confirm']:
+            flash("passwords do not match", "password_match_err")
+            is_valid = False
+        if User.get_user_by_username(data['username']):
+            flash("username is already registered", "user_exist_err")
+            is_valid = False
+
+        return is_valid

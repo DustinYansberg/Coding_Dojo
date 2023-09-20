@@ -19,7 +19,7 @@ class Score:
         query = """
                 INSERT INTO
         
-                scores(score, user_id, game_id)
+                scores(high_score, user_id, game_id)
                 
                 VALUES (%(score)s,%(user_id)s,%(game_id)s)"""
         return connectToMySQL(DATABASE).query_db(query, data)

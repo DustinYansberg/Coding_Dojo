@@ -45,7 +45,7 @@ def reset():
     return redirect('/number_guess')
 
 
-@app.route('/win', methods=['POST'])
+@app.route('/number_guess/win', methods=['POST', 'GET'])
 def win():
     # TODO
     #  Create user registration and add uuid to session when logging in for this to work!
@@ -62,17 +62,4 @@ def win():
     if session['num_of_guess'] < int(score.score):
         Score.update_score(data)
 
-
-
-    """
-    will need to add a get user with game score method to user.py
-    actually, maybe this can be accomplished without joining the tables?
-    just write it in the score.py model. Score.get_score(user_id, game_id)
-    the query could be
-
-    SELECT * FROM scores WHERE user_id=%(user_id)s AND game_id= %(game_id)s
-
-    then add a method in the score.py to update
-    :return: redirect to '/'
-    """
-    pass
+    return redirect('/number_guess')
