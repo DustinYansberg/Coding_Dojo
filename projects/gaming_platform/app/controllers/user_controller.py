@@ -5,6 +5,8 @@ from app.models.user import User
 
 @app.route('/')
 def home_page():
+    if 'uuid' in session:
+        return redirect('/games')
     return render_template('index.html')
 
 

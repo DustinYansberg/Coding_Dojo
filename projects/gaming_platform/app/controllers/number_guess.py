@@ -41,14 +41,15 @@ def guess():
 
 @app.route('/number_guess/reset', methods=['POST'])
 def reset():
-    session.clear()
+    session['num_of_guesses'] = 0
+    session['guesses'] = []
+    session['num'] = random.randint(1, 100)
     return redirect('/number_guess')
 
 
 @app.route('/number_guess/win', methods=['POST', 'GET'])
 def win():
-    # TODO
-    #  Create user registration and add uuid to session when logging in for this to work!
+
     data = {
         'user_id': session['uuid'],
         'game_id': 1,
@@ -59,7 +60,10 @@ def win():
         Score.insert_score(data)
         return redirect('/number_guess')
 
-    if session['num_of_guess'] < int(score.score):
+    if session['num_of_guesses'] < int(score.score):
         Score.update_score(data)
 
     return redirect('/number_guess')
+
+
+
