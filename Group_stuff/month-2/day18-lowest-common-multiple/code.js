@@ -5,18 +5,6 @@
   The common multiples of 3 and 4 are 0, 12, 24, .... 
   The least common multiple (LCM) of two numbers is the smallest
   number (not zero) that is a multiple of both."
-  
-  Try writing two columns of multiples as a starting point:
-  starting with 15 and 25 and keep writing their multiples until you find the
-  lowest common one then turn this in to a step by step instruction
-
-  15 25
-  30 50
-  45 75
-  60 
-  75
-
-  75 is the first common
 */
 
 const num1A = 1;
@@ -104,6 +92,20 @@ function lowestCommonMultiple(a, b) {
     smallestPrimeFactorB *
     lowestCommonMultiple(a / smallestPrimeFactorA, b / smallestPrimeFactorB)
   );
+}
+
+function alternateLowestCommonMultiple(a, b, am = a, bm = b) {
+  // Lets approach this a different way. What if we could track addition variables through the recursive function?
+  // we could keep track of a multiple of a, called am, and a multiple of b called bm.
+  // in each level of recursion, we could increment either am by a or bm by b, and only return anything if am is equal to bm
+  // this approach is different because we don't need to find the factors of the two given numbers,
+  //    we just need to increment them by themselves until they are equal
+  
+  if (am === bm) return am;
+
+  if (am < bm) return lowestCommonMultiple(a, b, am + a, bm);
+
+  if (bm < am) return lowestCommonMultiple(a, b, am, bm + b);
 }
 
 console.log(lowestCommonMultiple(num1A, num1B), "expected:", expected1);
