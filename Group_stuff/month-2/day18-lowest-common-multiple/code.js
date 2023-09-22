@@ -61,27 +61,44 @@ function lowestCommonMultiple(a, b) {
   // EXAMPLE 2: The prime factors of 8 are 2, 2, and 2. This is because 2 * 2 * 2 = 8
   // NOTE: 1 is ALWAYS a prime factor of any number, so we want to ignore this in calculations unless it is the only number left
 
-  // CODE
-  // base cases
-  // if either a or b is 1, their smallest prime factor is 1.
-  if (a == 1 || b == 1) return 1;
+  // MATH EXPLANATION OF LEAST COMMON MULTIPLES
+  // In short, the least common multiple of two numbers can be found by making their prime factorizations be equal.
+  // for example, the least common multiple of 10 and 25 is 50.
+  // This is because the prime factors of 25 are 5 * 5.
+  // The prime factors of 10 are 5 * 2
+  // to make 5 * 2 and 5 * 5 have the same value, we essentially want to merge them.
+  // look at 5 * 5 and then look at 5 * 2. What is 5 * 5 missing that 5 * 2 has? 5 * 5 is missing a 2.
+  // so by "bringing over" the missing prime factor, we should have an equation that looks like 5 * 5 * 2, which is 50!
 
-  // if a and b are the same value, then we no longer need to find their prime factors
+  // CODE
+
+  // base cases -- when we no longer need to find prime factors:
+  if (a == 1 || b == 1) return 1;
   if (a == b) return a;
+  if (a % b == 0) return a;
+  if (b % a == 0) return b;
 
   // start with 2 because everything is evenly divisible by 1
   let smallestPrimeFactorA = 2;
   let smallestPrimeFactorB = 2;
 
   // find the prime factor of each number if either number is prime, we will find no factor for it, and will ultimately return a * b
-  for (smallestPrimeFactorA; smallestPrimeFactorA <= a; smallestPrimeFactorA++) {
+  for (
+    smallestPrimeFactorA;
+    smallestPrimeFactorA <= a;
+    smallestPrimeFactorA++
+  ) {
     if (a % smallestPrimeFactorA == 0) break;
   }
-  for (smallestPrimeFactorB; smallestPrimeFactorB <= b; smallestPrimeFactorB++) {
+  for (
+    smallestPrimeFactorB;
+    smallestPrimeFactorB <= b;
+    smallestPrimeFactorB++
+  ) {
     if (b % smallestPrimeFactorB == 0) break;
   }
 
-//   now multiply the smallest prime factor of each number together with the returned value of the next level of the algorithm
+  //   now multiply the smallest prime factor of each number together with the returned value of the next level of the algorithm
   return (
     smallestPrimeFactorA *
     smallestPrimeFactorB *
@@ -89,10 +106,10 @@ function lowestCommonMultiple(a, b) {
   );
 }
 
-console.log(lowestCommonMultiple(num1A, num1B), "expected:", expected1)
-console.log(lowestCommonMultiple(num2A, num2B), "expected:", expected2)
-console.log(lowestCommonMultiple(num3A, num3B), "expected:", expected3)
-console.log(lowestCommonMultiple(num4A, num4B), "expected:", expected4)
+console.log(lowestCommonMultiple(num1A, num1B), "expected:", expected1);
+console.log(lowestCommonMultiple(num2A, num2B), "expected:", expected2);
+console.log(lowestCommonMultiple(num3A, num3B), "expected:", expected3);
+console.log(lowestCommonMultiple(num4A, num4B), "expected:", expected4);
 console.log(lowestCommonMultiple(num5A, num5B), "expected:", expected5);
-console.log(lowestCommonMultiple(num6A, num6B));
+console.log(lowestCommonMultiple(11, 13));
 /*****************************************************************************/
