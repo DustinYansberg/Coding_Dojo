@@ -54,7 +54,7 @@ def win():
         'user_id': session['uuid'],
         'game_id': 1,
         'score': session['num_of_guesses']}
-    score = Score.get_score_of_user(session['uuid'])
+    score = Score.get_score_of_user(data)
 
     if not score:
         Score.insert_score(data)
