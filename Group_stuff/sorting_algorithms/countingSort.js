@@ -1,4 +1,6 @@
-/*function CountingSort(input, k)
+/*
+
+function CountingSort(input, k)
     
     count ← array of k + 1 zeros
     output ← array of same length as input
@@ -16,4 +18,8 @@
         output[count[j]] = input[i]
 
     return output
-    */
+*/
+
+const countingSort = (nums) => {
+    
+};
