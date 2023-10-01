@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import List from "./components/List";
+import Task from "./components/Task";
 
 function App() {
+  const [tasks, setTasks] = useState([
+    { description: "Wash Clothes", isComplete: false },
+    { description: "Dry Clothes", isComplete: false },
+    { description: "Fold Clothes", isComplete: false },
+  ]);
+
+  const completeTask = (task, index) => {
+    const tasksCopy = [...tasks];
+    tasksCopy[index].isComplete = task.isComplete;
+
+    setTasks([...tasksCopy]);
+  };
+  const deleteTask = (index) => {
+    return setTasks([...tasks.filter((_, idx) => idx != index)]);
+  };
+
+  const addTask = (task) => {
+    return setTasks([...tasks, task]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Task addTask={addTask} />
+      <hr/>
+      {tasks.map((task, index) => {
+        return (
+          <List
+            key={index}
+            index={index}
+            task={task}
+            completeTask={completeTask}
+            deleteTask={deleteTask}
+          />
+        );
+      })}
     </div>
   );
 }
