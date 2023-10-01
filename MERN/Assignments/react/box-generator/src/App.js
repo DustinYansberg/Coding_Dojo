@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Form from "./components/Form";
+import "./App.css";
+import Box from "./components/Box";
 
 function App() {
+  const [boxes, setBoxes] = useState(["red", "green", "blue"]);
+
+  const createBox = (color) => {
+    setBoxes([...boxes, color]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "400px",
+          alignItems: "center",
+          margin: "auto",
+          padding: "10px",
+          overflowWrap: "anywhere",
+        }}
+      >
+        <Form createBox={createBox} />
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          // width: "400px",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: "auto",
+          padding: "10px",
+          overflowWrap: "anywhere",
+        }}
+      >
+        {boxes.map((boxColor, idx) => {
+          return <Box key={idx} boxColor={boxColor} />;
+        })}
+      </div>
     </div>
   );
 }
