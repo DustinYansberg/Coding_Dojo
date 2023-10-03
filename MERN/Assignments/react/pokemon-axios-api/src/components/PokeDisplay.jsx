@@ -1,18 +1,16 @@
 import { useState } from "react";
+import axios from "axios";
 
 const PokeDisplay = () => {
   const [pokemonList, setPokemonList] = useState([]);
   const [offset, setOffset] = useState(0);
 
   const createPokemonList = () => {
-    fetch(`https://pokeapi.co/api/v2/pokemon?limit=10&offset=${offset}`)
-      .then((response) => {
-        return response.json();
-      })
+    axios
+      .get(`https://pokeapi.co/api/v2/pokemon?limit=10&offset=${offset}`)
       .then((response) => {
         setOffset(offset + 10);
-        setPokemonList(response.results);
-        console.log(offset);
+        return setPokemonList(response.data.results);
       })
       .catch((err) => {
         console.log(err);

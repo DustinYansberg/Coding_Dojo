@@ -10,14 +10,15 @@ function App() {
     { description: "Fold Clothes", isComplete: false },
   ]);
 
-  const completeTask = (task, index) => {
+  const completeTask = (index) => {
     const tasksCopy = [...tasks];
-    tasksCopy[index].isComplete = task.isComplete;
+    tasksCopy[index].isComplete = !tasksCopy[index].isComplete;
 
     setTasks([...tasksCopy]);
   };
   const deleteTask = (index) => {
-    return setTasks([...tasks.filter((_, idx) => idx != index)]);
+    
+    return setTasks([...tasks.filter((_, idx) => idx !== index)]);
   };
 
   const addTask = (task) => {
@@ -27,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <Task addTask={addTask} />
-      <hr/>
+      <hr />
       {tasks.map((task, index) => {
         return (
           <List

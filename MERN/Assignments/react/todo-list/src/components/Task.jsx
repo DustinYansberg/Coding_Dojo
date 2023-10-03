@@ -14,12 +14,12 @@ const Task = ({ addTask }) => {
   };
   return (
     <>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="newTask"
-          id="newTask"
           placeholder="write a new task..."
+          autoComplete="false"
           value={task.description}
           onChange={(e) => setTask({ ...task, description: e.target.value })}
         />
