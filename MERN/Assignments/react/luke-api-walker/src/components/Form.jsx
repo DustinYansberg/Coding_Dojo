@@ -5,6 +5,7 @@ const Form = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     const searchObject = { category: e.target[0].value, id: e.target[1].value };
+    // Use state for form inputs
     navigate(`/${searchObject.category}/${searchObject.id}`);
   };
   return (

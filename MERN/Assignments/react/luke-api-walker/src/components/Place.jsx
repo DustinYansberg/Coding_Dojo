@@ -1,23 +1,33 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios'
 
 const Place = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [planet, setPlanet] = useState(null);
+  // useEffect(() => {
+  //   fetch(`https://swapi.dev/api/planets/${id}`)
+  //     .then((response) => {
+  //       if (response.status != 200) {
+  //         navigate(`/error`);
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((response) => setPlanet(response))
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, [id]);
+  
   useEffect(() => {
-    fetch(`https://swapi.dev/api/planets/${id}`)
-      .then((response) => {
-        if (response.status != 200) {
-          navigate(`/error`);
-        }
-        return response.json();
-      })
-      .then((response) => setPlanet(response))
-      .catch((err) => {
-        console.log(err);
-      });
+    axios.get(`https://swapi.dev/api/planets/${id}`).then((response) => {
+      setPlanet(response.data)
+    }).catch(err=>{
+      console.log(err)
+      navigate('/error')
+    });
   }, [id]);
 
   return (

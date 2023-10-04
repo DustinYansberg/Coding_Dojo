@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios'
 
 const Person = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [person, setPerson] = useState(null);
-  const [homePlanet, setHomePlanet] = useState({});
+  const [homePlanet, setHomePlanet] = useState("");
   const [url, setUrl] = useState("");
 
   useEffect(() => {
@@ -18,6 +19,7 @@ const Person = () => {
         return response.json();
       })
       .then((response) => {
+        // fetch home world
         fetch(response.homeworld)
           .then((response) => {
             if (response.status != 200) {
@@ -26,7 +28,7 @@ const Person = () => {
             return response.json();
           })
           .then((response) => {
-            console.log(response);
+            // route to the sliced url
             setUrl(response.url.slice(response.url.indexOf("planets")));
             setHomePlanet(response);
           })
@@ -39,6 +41,17 @@ const Person = () => {
         console.log(err);
       });
   }, [id]);
+
+  // useEffect(() => {
+  //   axios.get(`https://swapi.dev/api/people/${id}`).then((response) => {
+  //     setPerson(response.data)
+  //   }).catch(err=>{
+  //     console.log(err)
+  //     navigate('/error')
+  //   });
+  // }, [id]);
+
+  
 
   return (
     <div>
