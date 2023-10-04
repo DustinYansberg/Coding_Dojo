@@ -2,8 +2,8 @@ arr = [2, 5, 3, 6, 7, 0, 0, 23, 11];
 k = 16;
 
 const consecutiveSum1 = (arr, k) => {
-    // THIS IS THE SLOWER ALGO, 
-    // THE FASTER ALGO IS FOUND BELOW CALLED "consecutiveSum()"
+  // THIS IS THE SLOWER ALGO,
+  // THE FASTER ALGO IS FOUND BELOW CALLED "consecutiveSum()"
   const consecutiveSums = [];
 
   let i = 0;
@@ -50,11 +50,10 @@ const consecutiveSum = (arr, k) => {
       windowStart++; // move the back of the window forward
     }
     if (windowSum === k) {
-      windowEnd++;
-      consecutiveSums.push([arr.slice(windowStart, windowEnd)]); // push the current window to the output array
-    } else {
-      windowEnd++; // grow the window if the window sum did not match k
+      consecutiveSums.push([arr.slice(windowStart, windowEnd + 1)]); // push the current window to the output array
     }
+
+    windowEnd++; // always grow the window to keep loop moving forward
   }
 
   return consecutiveSums;
