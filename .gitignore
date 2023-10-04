@@ -45,4 +45,4 @@ Thumbs.db
 # Belt Exams #
 ##############
 belt_exams/
-/node_modules
+node_modules/
