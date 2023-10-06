@@ -30,30 +30,36 @@ const consecutiveSum1 = (arr, k) => {
   return consecutiveSums;
 };
 
+arr = [2, 5, 3, 6, 7, 0, 0, 23, 11];
+k = 16;
+
 const consecutiveSum = (arr, k) => {
   const consecutiveSums = [];
 
-  let windowStart = 0;
-  let windowEnd = 0;
-  let windowSum = 0;
-  // we want to look at a "window" of the array and compare its summed values to k.
-  // first we want to add the end of the window to the sum
-  // while the windowSum is greater than k, we want to subtract the start of the window, and shrink the window from the back
-  // if the windowSum is k, we want to pass that window into the output as an array, then grow the window from the end
-  // if we didn't find a match for k, we still want to grow the window to keep the loop moving forward
+  /*
+  we want to look at a "window" of the array and compare its summed values to k.
+  first we want to add the end of the window to the sum
+  while the windowSum is greater than k, we want to subtract the start of the window, and shrink the window from the back
+  if the windowSum is k, we want to pass that window into the output as an array, then grow the window from the end
+  if we didn't find a match for k, we still want to grow the window to keep the loop moving forward
+  */
 
-  while (windowEnd < arr.length) {
-    windowSum += arr[windowEnd]; // add the front of the window to the sum
+  let left = 0;
+  let right = 0;
+  let windowSum = 0;
+
+  while (right < arr.length) {
+    windowSum += arr[right]; // add the front of the window to the sum
 
     while (windowSum > k) {
-      windowSum -= arr[windowStart]; // take the back of the window away from the sum
-      windowStart++; // move the back of the window forward
+      windowSum -= arr[left]; // take the back of the window away from the sum
+      left++; // move the back of the window forward
     }
     if (windowSum === k) {
-      consecutiveSums.push([arr.slice(windowStart, windowEnd + 1)]); // push the current window to the output array
+      consecutiveSums.push([arr.slice(left, right + 1)]); // push the current window to the output array
     }
 
-    windowEnd++; // always grow the window to keep loop moving forward
+    right++; // always grow the window to keep loop moving forward
   }
 
   return consecutiveSums;
