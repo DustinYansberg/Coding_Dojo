@@ -25,27 +25,6 @@ function App() {
   };
   return (
     <div className="App">
-      {/* elevation makes the section appear raised above the page by giving it a drop shadow*/}
-      {/* <Paper elevation={10}>
-        <p>This is written on a "Paper" element</p>
-        <p>
-          This paper element has a property called "elevation" which allows it
-          to appear raised about the rest of the page.
-        </p>
-        <p>This is achieved by adding a drop shadow below the Paper element.</p>
-        <p>This paper's elevation is set to 10</p>
-      </Paper>
-      <Paper elevation={3}>
-        <p>this paper's elevation is set to 3</p>
-      </Paper> */}
-      {/* CARD Below */}
-      {/* <Card>
-        <CardContent>
-          <h1>This is content within my card</h1>
-        </CardContent>
-      </Card> */}
-      {/* BUTTON */}
-      {/* <Button>Click Me I am a default button</Button> */}
       <Paper elevation={3} style={styles.paper}>
         <h2>Login Form</h2>
         <form>
