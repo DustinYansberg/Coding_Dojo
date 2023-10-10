@@ -14,7 +14,7 @@ module.exports.createProduct = (request, response) => {
     price,
   })
     .then((product) => response.json(product))
-    .catch((err) => response.json(err));
+    .catch((err) => response.status(400).json(err));
 };
 
 //* READ

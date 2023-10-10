@@ -35,18 +35,19 @@ function insert(tableName, columnValuePairs) {
   const columns = Object.keys(columnValuePairs).join(", ");
   let values = Object.values(columnValuePairs);
 
-  // convert values array to a string, but replace non-string values to strings that are readable by SQL
+  // map over the values, and convert each value based on what type each element in the array is
   values = values
-    .map((val) =>
-      typeof val === "string"
-        ? `'${val}'`
-        : val === false
-        ? (val = -1)
-        : val === true
-        ? 1
-        : val
+    .map(
+      (val) =>
+        typeof val === "string" // if it is a string just add quotes
+          ? `'${val}'`
+          : val === false // if it is false, convert to -1
+          ? (val = -1)
+          : val === true // if it is true, convert to 1
+          ? 1
+          : val // if its anything else, leave it as is.
     )
-    .join(", ");
+    .join(", "); // join them all into one string
 
   // Return the SQL query, but insert the table name, the columns, and the values
   return `INSERT INTO ${tableName} (${columns}) VALUES (${values});`;

@@ -1,33 +1,21 @@
 import React, { useState } from "react";
-import axios from "axios";
 
-export default () => {
-  //keep track of what is being typed via useState hook
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState(0);
+export default (props) => {
+  const { initialTitle, initialDescription, initialPrice, onSubmitProp } =
+    props;
 
-  //handler when the form is submitted
+  const [title, setTitle] = useState(initialTitle);
+  const [description, setDescription] = useState(initialDescription);
+  const [price, setPrice] = useState(initialPrice);
+
   const onSubmitHandler = (e) => {
-    //prevent default behavior of the submit
     e.preventDefault();
-    //make a post request to create a new product
-    const postReq = {
-      title: title,
-      description: description,
-      price: price,
-    };
-    axios
-      .post("http://localhost:8000/api/products", postReq)
-      .then(
-        (res) => console.log(res),
-        setTitle(""),
-        setPrice(0),
-        setDescription("")
-      )
-      .catch((err) => console.log(err));
+    onSubmitProp({ title, price, description });
+    setTitle("");
+    setPrice(0);
+    setDescription("");
   };
-  //onChange to update firstName and lastName
+
   return (
     <form onSubmit={onSubmitHandler}>
       <p>
@@ -35,8 +23,8 @@ export default () => {
         <br />
         <input
           type="text"
-          onChange={(e) => setTitle(e.target.value)}
           value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
       </p>
       <p>
@@ -61,7 +49,7 @@ export default () => {
           value={description}
         />
       </p>
-      <input type="submit" value="Add Product to DB" />
+      <input type="submit" value="Save" />
     </form>
   );
 };

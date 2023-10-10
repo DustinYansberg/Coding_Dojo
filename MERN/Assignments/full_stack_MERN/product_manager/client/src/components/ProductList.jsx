@@ -1,14 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import DeleteButton from "./DeleteButton";
 
-const ProductList = ({ products, deleteHandler }) => {
+const ProductList = ({ products, removeFromDom }) => {
+  // console.log(products);
   return (
     <div>
-      {products.map((product, index) => (
+      {products.map((oneProduct, index) => (
         <p key={index}>
-          <Link to={`/products/${product._id}`}>{product.title}</Link>
-          <button onClick={() => deleteHandler(product._id)}>Delete</button>
-          <Link to={`/products/${product._id}/edit`}>Edit</Link>
+          <Link to={`/products/${oneProduct._id}`}>{oneProduct.title}</Link>
+          <DeleteButton
+            successCallback={() => removeFromDom(oneProduct._id)}
+          ></DeleteButton>
+          <Link to={`/products/${oneProduct._id}/edit`}>Edit</Link>
         </p>
       ))}
     </div>
