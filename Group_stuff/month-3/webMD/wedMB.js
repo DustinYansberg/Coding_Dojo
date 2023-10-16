@@ -85,7 +85,7 @@ function webMD(ailments, meds) {
       }
     }
     if (symptomCount === 0) {
-      // dont add it to the array if it treats nothing
+      // don't add it to the array if it treats nothing
       continue;
     }
     symptomCount === highestNumOfTreatedSymptoms // if this med matches the best symptom count, add it to the array
