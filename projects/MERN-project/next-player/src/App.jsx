@@ -1,13 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 
+import Navbar from "./Components/Navbar";
 import MainView from "./Views/MainView";
 
 import "./App.css";
-import { Paper } from "@mui/material";
+// import { useState } from "react";
 
 function App() {
   return (
     <>
+      <Navbar />
       <Routes>
         <Route path="/" element={<MainView />} />
       </Routes>

@@ -57,11 +57,14 @@ function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection("messages");
   const query = messagesRef.orderBy("createdAt").limit(25);
-
   const [messages] = useCollectionData(query, { idField: "id" });
-
   const [formValue, setFormValue] = useState("");
 
+  // console.log(messagesRef);
+  // console.log(query);
+  // console.log(messages);
+
+  
   const sendMessage = async (e) => {
     e.preventDefault();
     const { uid, photoURL } = auth.currentUser;
@@ -73,7 +76,7 @@ function ChatRoom() {
     });
     setFormValue("");
 
-    dummy.current.scrollIntoView({ behavior: "smooth" });
+    messagesRef.dummy.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
