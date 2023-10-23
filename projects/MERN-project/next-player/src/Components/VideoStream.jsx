@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+//material UI stuff
 import Box from "@mui/joy/Box";
 import Card from "@mui/joy/Card";
 import CardCover from "@mui/joy/CardCover";
@@ -6,39 +8,62 @@ import CardContent from "@mui/joy/CardContent";
 import { Button } from "@mui/material";
 import Typography from "@mui/joy/Typography";
 
-const VideoStream = () => {
-  //   const servers = {
-  //     iceServers: [
-  //       {
-  //         urls: [
-  //           "stun:stun1.l.google.com:19302",
-  //           "stun:stun2.l.google.com:19302",
-  //         ],
-  //       },
-  //     ],
-  //     iceCandidatePoolSize: 10,
-  //   };
+//firebase stuff
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
 
-  //   let pc = new RTCPeerConnection(servers);
-  //   let localStream = navigator.mediaDevices.getUserMedia({
-  //     video: true,
-  //     audio: true,
-  //   });
+const VideoStream = (props) => {
+  const firebaseConfig = {
+    apiKey: "AIzaSyAVCZ8e03WIrIl-7QqOyKHmQgan3nFv6_M",
+    authDomain: "nextplayer-31fa4.firebaseapp.com",
+    projectId: "nextplayer-31fa4",
+    storageBucket: "nextplayer-31fa4.appspot.com",
+    messagingSenderId: "285690304694",
+    appId: "1:285690304694:web:9eaaea30ef85357ad4ae17",
+    measurementId: "G-DL1NCN047T",
+  };
 
+  const servers = {
+    iceServers: [
+      {
+        urls: [
+          "stun:stun1.l.google.com:19302",
+          "stun:stun2.l.google.com:19302",
+        ],
+      },
+    ],
+    iceCandidatePoolSize: 10,
+  };
+
+  const db = firebase.initializeApp(firebaseConfig).firestore();
+
+  const [peerConnection, setPeerConnection] = useState(null);
+  const [localStream, setLocalStream] = useState(new MediaStream());
+  const [remoteStream, setRemoteStream] = useState(new MediaStream());
+  const [roomDialog, setRoomDialog] = useState(null);
+  const [roomId, setRoomId] = useState(null);
   const [playing, setPlaying] = useState(false);
-  const height = 300;
-  const width = 300;
+
+  const height = 400;
+  const width = 400;
+
+  useEffect(() => {
+    startVideo();
+  }, []);
 
   const startVideo = async () => {
     setPlaying(true);
-
     const stream = await navigator.mediaDevices.getUserMedia({
       video: true,
       audio: true,
     });
 
-    let video = document.getElementsByClassName("videoFeed")[0];
-    video.srcObject = stream;
+    setLocalStream(stream);
+
+    // document.getElementsByClassName("videoFeed")[0].srcObject = localStream;
+
+    // setRemoteStream(new MediaStream());
+    // document.getElementsByClassName("videoFeed")[1].srcObject = remoteStream;
   };
 
   const stopVideo = () => {
@@ -78,6 +103,7 @@ const VideoStream = () => {
           height={height}
           width={width}
           className="videoFeed"
+          src={localStream}
         ></video>
         {!playing ? (
           <Button onClick={startVideo}>Start</Button>
