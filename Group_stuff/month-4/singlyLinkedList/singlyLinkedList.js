@@ -125,6 +125,51 @@ class SinglyLinkedList {
     }
     return arr;
   }
+
+  /**
+   * Creates a new node with the given data and inserts that node at the front
+   * of this list.
+   * - Time: (?).
+   * - Space: (?).
+   * @param {any} data The data for the new node.
+   * @returns {SinglyLinkedList} This list.
+   */
+  insertAtFront(data) {
+    let temp = this.head;
+    this.head = new ListNode(data);
+    this.head.next = temp;
+    return this;
+  }
+
+  /**
+   * Removes the first node of this list.
+   * - Time: (?).
+   * - Space: (?).
+   * @returns {any} The data from the removed node.
+   */
+  removeHead() {
+    this.head = this.head.next;
+    return this;
+  }
+
+  // EXTRA
+  /**
+   * Calculates the average of this list.
+   * - Time: (?).
+   * - Space: (?).
+   * @returns {number|NaN} The average of the node's data.
+   */
+  average() {
+    let runner = this.head;
+    let sum = 0;
+    let count = 0;
+    while (runner) {
+      sum += runner.data;
+      count++;
+      runner = runner.next;
+    }
+    return sum / count;
+  }
 }
 
 /******************************************************************* 
