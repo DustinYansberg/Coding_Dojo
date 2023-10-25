@@ -4,9 +4,14 @@ public class Attack
     public string Name
     {
         get { return _Name; }
-        set { }
+        set { _Name = value; }
     }
-    int DamageAmount;
+    private int _DamageAmount;
+    public int DamageAmount
+    {
+        get { return _DamageAmount; }
+        set { _DamageAmount = value; }
+    }
 
     public Attack(string name, int damageAmount)
     {

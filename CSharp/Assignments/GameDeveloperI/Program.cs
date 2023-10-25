@@ -1,16 +1,16 @@
 ﻿System.Console.ForegroundColor = ConsoleColor.Green;
 System.Console.WriteLine("I AM RUN");
 
-Attack Boop = new("Boop", 24);
-Attack Derp = new("Derp", -10);
-Attack Snore = new("Snore", 10);
+MagicCaster Dustin = new("Dustin");
+MeleeFighter Clarissa = new("Clarissa");
+RangedFighter Bart = new("Bart");
 
-Enemy Dustin = new("Dustin", 100, new List<Attack>());
+Clarissa.PerformAttack(Bart, Clarissa.AttackList[1]);
+Clarissa.Rage(Dustin);
+Bart.PerformAttack(Clarissa, Bart.AttackList[0]);
+Bart.Dash();
+Bart.PerformAttack(Clarissa, Bart.AttackList[0]);
+Dustin.PerformAttack(Clarissa, Dustin.AttackList[0]);
+Dustin.Heal(Bart);
+Dustin.Heal(Dustin);
 
-Dustin.AddToAttackList(Snore);
-Dustin.AddToAttackList(Boop);
-Dustin.AddToAttackList(Derp);
-
-
-Attack Randy = Dustin.RandomAttack();
-System.Console.WriteLine(Randy.Name);
