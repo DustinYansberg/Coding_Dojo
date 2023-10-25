@@ -170,6 +170,83 @@ class SinglyLinkedList {
     }
     return sum / count;
   }
+
+  /**
+   * Removes the last node of this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @returns {any} The data from the node that was removed.
+   */
+  removeBack() {
+    if (this.isEmpty()) return null;
+
+    let runner = this.head;
+
+    while (runner.next.next) {
+      runner = runner.next;
+    }
+
+    // * R  N  2
+    // * 1, 1, 1, 2, 3, 3, 4, 7, 5
+
+    let removed = runner.next;
+    runner.next = null;
+
+    return removed.data;
+  }
+
+  /**
+   * Determines whether or not the given search value exists in this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {any} val The data to search for in the nodes of this list.
+   * @returns {boolean}
+   */
+  contains(val) {
+    // look at each element in list
+    // compare each node data to val
+    if (this.isEmpty()) return false;
+
+    let runner = this.head;
+
+    // * Val = 3
+    // *                         R
+    // * 1, 1, 1, 2, 3, 3, 4, 7, 5
+    while (runner) {
+      if (runner.data === val) return true;
+      runner = runner.next;
+    }
+
+    return false;
+  }
+
+  /**
+   * Determines whether or not the given search value exists in this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {any} val The data to search for in the nodes of this list.
+   * @param {?ListNode} current The current node during the traversal of this list
+   *    or null when the end of the list has been reached.
+   * @returns {boolean}
+   */
+  containsRecursive(val, current = this.head) {
+    if (!current) return false;
+    if (current.data === val) return true;
+    return this.containsRecursive(val, current.next);
+  }
+
+  // EXTRA
+  /**
+   * Recursively finds the maximum integer data of the nodes in this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {ListNode} runner The start or current node during traversal, or null
+   *    when the end of the list is reached.
+   * @param {ListNode} maxNode Keeps track of the node that contains the current
+   *    max integer as it's data.
+   * @returns {?number} The max int or null if none.
+   */
+  recursiveMax(runner = this.head, maxNode = this.head) {}
 }
 
 /******************************************************************* 
@@ -195,9 +272,13 @@ const emptyList = new SinglyLinkedList();
 // const loopList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4]);
 // loopList.head.next.next.next = loopList.head.next;
 
-// const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
-//   1, 1, 1, 2, 3, 3, 4, 5, 5,
-// ]);
+const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
+  1, 1, 1, 2, 3, 3, 4, 7, 5,
+]);
+
+// console.log(sortedDupeList.removeBack());
+// console.log(sortedDupeList.contains(8));
+// console.log(sortedDupeList.contains(5));
 
 // Print your list like so:
 // console.log(firstThreeList.toArr());
