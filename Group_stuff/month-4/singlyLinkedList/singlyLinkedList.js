@@ -246,7 +246,18 @@ class SinglyLinkedList {
    *    max integer as it's data.
    * @returns {?number} The max int or null if none.
    */
-  recursiveMax(runner = this.head, maxNode = this.head) {}
+  recursiveMax(runner = this.head, maxNode = this.head) {
+    // if the current runner's data is greater than maxNode's data, reassign maxNode to runner
+    runner.data > maxNode.data && (maxNode = runner);
+
+    // if we have met the end of the list, return the maxNode, else return null if maxNode has nothing
+    if (!runner.next) {
+      return maxNode ? maxNode.data : null;
+    }
+
+    // continue the recursion
+    return this.recursiveMax(runner.next, maxNode);
+  }
 }
 
 /******************************************************************* 
@@ -279,6 +290,7 @@ const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
 // console.log(sortedDupeList.removeBack());
 // console.log(sortedDupeList.contains(8));
 // console.log(sortedDupeList.contains(5));
+// console.log(sortedDupeList.recursiveMax());
 
 // Print your list like so:
 // console.log(firstThreeList.toArr());
