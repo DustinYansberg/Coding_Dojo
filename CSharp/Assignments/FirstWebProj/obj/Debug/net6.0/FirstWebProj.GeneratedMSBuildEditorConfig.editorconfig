@@ -14,3 +14,7 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\drfla\Documents\Coding_Dojo\CSharp\Assignments\FirstWebProj
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/drfla/Documents/Coding_Dojo/CSharp/Assignments/FirstWebProj/Views/Hello/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVsbG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

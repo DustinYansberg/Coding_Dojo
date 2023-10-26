@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "47HQQ+CHZ9XT75EuKBs7BXF5ES7HdtNBYF3IzSSshT8=",
+  "Source": "DojoSurvey",
+  "BasePath": "_content/DojoSurvey",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "DojoSurvey\\wwwroot",
+      "Source": "DojoSurvey",
+      "ContentRoot": "C:\\Users\\drfla\\Documents\\Coding_Dojo\\CSharp\\Assignments\\DojoSurvey\\wwwroot\\",
+      "BasePath": "_content/DojoSurvey",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "g49zxgxN53kXLInURRkA29J09Uma/P5V6NVMjZP8RhI=",
+  "Source": "FirstWebProj",
+  "BasePath": "_content/FirstWebProj",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FirstWebProj\\wwwroot",
+      "Source": "FirstWebProj",
+      "ContentRoot": "C:\\Users\\drfla\\Documents\\Coding_Dojo\\CSharp\\Assignments\\FirstWebProj\\wwwroot\\",
+      "BasePath": "_content/FirstWebProj",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\drfla\\Documents\\Coding_Dojo\\CSharp\\Assignments\\FirstWebProj\\wwwroot\\css\\style.css",
+      "SourceId": "FirstWebProj",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\drfla\\Documents\\Coding_Dojo\\CSharp\\Assignments\\FirstWebProj\\wwwroot\\",
+      "BasePath": "_content/FirstWebProj",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "C:\\Users\\drfla\\Documents\\Coding_Dojo\\CSharp\\Assignments\\FirstWebProj\\wwwroot\\images\\distractedboyfriend.jpg",
+      "SourceId": "FirstWebProj",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\drfla\\Documents\\Coding_Dojo\\CSharp\\Assignments\\FirstWebProj\\wwwroot\\",
+      "BasePath": "_content/FirstWebProj",
+      "RelativePath": "images/distractedboyfriend.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\distractedboyfriend.jpg"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello!</title>
+    <link rel="stylesheet" href="~/css/style.css"/>  
+</head>
+
+<body>
+@{    
+    // Notice how '@' starts our C# section
+    // and we have wrapped all our logic in a code block
+
+    List<string> StringList = new List<string>() {"one", "two", "three", "four"};            
+    foreach(string word in StringList)    
+    {        
+        // We can render HTML from within C# code!
+    	// We just have to remember to bring @ back if we want to render variables
+        <p>@word</p>    
+    }
+    <img src="~/images/distractedboyfriend.jpg" alt="">
+}
+</body>

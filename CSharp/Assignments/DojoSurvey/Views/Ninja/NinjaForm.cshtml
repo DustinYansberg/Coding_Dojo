@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Form</title>
+</head>
+
+<body>
+    <form action="process" method="post">
+        <label for="Name">Your Name:</label>
+        <input type="text" id="Name" name="Name" />
+
+        <label for="Location">Dojo Location:</label>
+        <select name="Location" id="Location">
+            <option value="Syracuse">Syracuse</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Anchorage">Anchorage</option>
+        </select>
+
+        <label for="Language">Favorite Language:</label>
+        <select name="Language" id="Language">
+            <option value="Python">Python</option>
+            <option value="Haskell">Haskell</option>
+            <option value="Javascript">Javascript</option>
+        </select>
+
+        <label for="Comment">Comment (optional):</label>
+        <textarea name="Comment" id="Comment" cols="30" rows="10"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
