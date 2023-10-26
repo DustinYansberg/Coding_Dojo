@@ -17,6 +17,7 @@ public class HomeController : Controller
     [HttpGet("")]
     public IActionResult Index()
     {
+        //!This is when we were passing in int values to the index view
         // ViewBag.MyNum = 9;
         // // The myViewModelNum variable will hold our information for our ViewModel
         // int myViewModelNum = 12;
