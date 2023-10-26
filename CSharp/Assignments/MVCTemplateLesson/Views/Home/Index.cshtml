@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@* @model int *@ <!-- This is from when we passed in int values-->
+@model User
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <div style="outline: black solid; display: flex; flex-direction: column;">
+        @* <h2>My model int: @Model </h2>
+        <h2>My viewbag int: @ViewBag.MyNum</h2> *@ <!-- This is from when we passed in int values-->
+        <h2>@Model.FirstName</h2>
+        <h2>@Model.LastName</h2>
+    </div>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
