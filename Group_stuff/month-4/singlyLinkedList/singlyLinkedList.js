@@ -258,6 +258,79 @@ class SinglyLinkedList {
     // continue the recursion
     return this.recursiveMax(runner.next, maxNode);
   }
+
+  /**
+   * Retrieves the data of the second to last node in this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @returns {any} The data of the second to last node or null if there is no
+   *    second to last node.
+   */
+  secondToLast() {
+    if (this.isEmpty()) {
+      return null;
+    }
+    let runner = this.head;
+    while (runner.next.next) {
+      runner = runner.next;
+    }
+    return runner.data;
+  }
+
+  /**
+   * Removes the node that has the matching given val as it's data.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {any} val The value to compare to the node's data to find the
+   *    node to be removed.
+   * @returns {boolean} Indicates if a node was removed or not.
+   */
+  removeVal(val) {
+    if (this.isEmpty()) {
+      return false;
+    }
+
+    let runner = this.head;
+    //* val = 5
+    //* R N 2
+    //* 2 3 4 9 7 6 5
+    while (runner.next) {
+      if (runner.next.data === val) {
+        runner.next = runner.next.next;
+        return true;
+      }
+      runner = runner.next;
+    }
+    return false;
+  }
+
+  // EXTRA
+  /**
+   * Inserts a new node before a node that has the given value as its data.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {any} newVal The value to use for the new node that is being added.
+   * @param {any} targetVal The value to use to find the node that the newVal
+   *    should be inserted in front of.
+   * @returns {boolean} To indicate whether the node was pre-pended or not.
+   */
+  prepend(newVal, targetVal) {
+    if (this.isEmpty()) {
+      return false;
+    }
+
+    let runner = this.head;
+    while (runner.next) {
+      if (runner.next.data === targetVal) {
+        let temp = runner.next;
+        runner.next = new ListNode(newVal);
+        runner.next.next = temp;
+        return true;
+      }
+      runner = runner.next;
+    }
+    return false;
+  }
 }
 
 /******************************************************************* 
