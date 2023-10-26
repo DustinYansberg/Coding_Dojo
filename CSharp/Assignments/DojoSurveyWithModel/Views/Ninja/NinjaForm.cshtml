@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Form</title>
+    <link rel="stylesheet" href="~/css/ninja.css">
+</head>
+
+<body>
+    @model Survey
+    <form asp-action="process" asp-controller="Ninja" method="post">
+        <div>
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div>
+            <label asp-for="Location">Location:</label>
+            <select asp-for="Location">
+                <option value="Syracuse">Syracuse</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Anchorage">Anchorage</option>
+            </select>
+            <span asp-validation-for="Location"></span>
+        </div>
+
+        <div>
+
+            <label asp-for="Language">Favorite Language:</label>
+            <select asp-for="Language">
+                <option value="Python">Python</option>
+                <option value="Haskell">Haskell</option>
+                <option value="Javascript">Javascript</option>
+            </select>
+            <span asp-validation-for="Language"></span>
+        </div>
+        <div id="comment-container">
+            <label asp-for="Comment">Comment (optional):</label>
+            <textarea asp-for="Comment" cols="30" rows="10"></textarea>
+            <span asp-validation-for="Comment"></span>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
