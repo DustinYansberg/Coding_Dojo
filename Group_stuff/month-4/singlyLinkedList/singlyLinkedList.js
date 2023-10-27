@@ -331,6 +331,84 @@ class SinglyLinkedList {
     }
     return false;
   }
+
+  /**
+   * Concatenates the nodes of a given list onto the back of this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {SinglyLinkedList} addList An instance of a different list whose
+   *    whose nodes will be added to the back of this list.
+   * @returns {SinglyLinkedList} This list with the added nodes.
+   */
+  concat(addList) {
+    if (this.isEmpty()) {
+      return addList;
+    }
+    let runner = this.head;
+    while (runner.next) {
+      runner = this.next;
+    }
+    runner.next = addList.head;
+    return this;
+  }
+
+  /**
+   * Finds the node with the smallest data and moves that node to the front of
+   * this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @returns {SinglyLinkedList} This list.
+   */
+  moveMinToFront() {
+    if (this.isEmpty()) {
+      return this;
+    }
+    let runner = this.head;
+    let min = runner;
+    let prev = null;
+    while (runner.next) {
+      runner.next.data < min.data && ((min = runner.next), (prev = runner));
+      runner = runner.next;
+    }
+
+    if (this.head != min) {
+      prev.next = prev.next.next;
+      let temp = this.head;
+      this.head = min;
+      min.next = temp;
+    }
+
+    return this;
+  }
+
+  // EXTRA
+  /**
+   * Splits this list into two lists where the 2nd list starts with the node
+   * that has the given value.
+   * splitOnVal(5) for the list (1=>3=>5=>2=>4) will change list to (1=>3)
+   * and the return value will be a new list containing (5=>2=>4)
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {any} val The value in the node that the list should be split on.
+   * @returns {SinglyLinkedList} The split list containing the nodes that are
+   *    no longer in this list.
+   */
+  splitOnVal(val) {
+    if (this.isEmpty()) {
+      return null;
+    }
+    let runner = this.head;
+    while (runner) {
+      if (runner.next.data == val) {
+        const newGuy = new SinglyLinkedList();
+        newGuy.head = runner.next;
+        runner.next = null;
+        return newGuy;
+      }
+      runner = runner.next;
+    }
+    return null;
+  }
 }
 
 /******************************************************************* 
@@ -357,13 +435,15 @@ const emptyList = new SinglyLinkedList();
 // loopList.head.next.next.next = loopList.head.next;
 
 const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
-  1, 1, 1, 2, 3, 3, 4, 7, 5,
+  2, 5, 2, 3, 3, 4, 7, 5,
 ]);
 
 // console.log(sortedDupeList.removeBack());
 // console.log(sortedDupeList.contains(8));
 // console.log(sortedDupeList.contains(5));
-// console.log(sortedDupeList.recursiveMax());
+console.log(sortedDupeList.moveMinToFront().toArr());
 
 // Print your list like so:
 // console.log(firstThreeList.toArr());
+
+console.log(Number.MAX_VALUE);
