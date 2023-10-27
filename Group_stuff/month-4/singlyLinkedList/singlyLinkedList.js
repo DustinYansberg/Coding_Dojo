@@ -346,7 +346,7 @@ class SinglyLinkedList {
     }
     let runner = this.head;
     while (runner.next) {
-      runner = this.next;
+      runner = runner.next;
     }
     runner.next = addList.head;
     return this;
@@ -435,15 +435,15 @@ const emptyList = new SinglyLinkedList();
 // loopList.head.next.next.next = loopList.head.next;
 
 const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
-  2, 5, 2, 3, 3, 4, 7, 5,
+  5, 2, 3, 3, 4, 7, 5, 1,
 ]);
+const secondDupeList = new SinglyLinkedList().insertAtBackMany([6, 6, 6, 6]);
 
 // console.log(sortedDupeList.removeBack());
 // console.log(sortedDupeList.contains(8));
 // console.log(sortedDupeList.contains(5));
+// console.log(sortedDupeList.concat(secondDupeList).toArr());
 console.log(sortedDupeList.moveMinToFront().toArr());
 
 // Print your list like so:
 // console.log(firstThreeList.toArr());
-
-console.log(Number.MAX_VALUE);
