@@ -1,0 +1,14 @@
+@{
+    string? Name = Context.Session.GetString("UserName");
+    int? Num = Context.Session.GetInt32("Number");
+}
+<h1>
+    HI @Name Your Number is @Num
+</h1>
+
+<form method="post">
+    <button formaction="PlusOne">+1</button>
+    <button formaction="MinusOne">-1</button>
+    <button formaction="MultiplyByTwo">&times; 2</button>
+    <button formaction="RandomPlus">+ Random</button>
+</form>
