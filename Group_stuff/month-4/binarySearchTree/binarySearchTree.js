@@ -38,8 +38,6 @@ class BinarySearchTree {
     this.root = null;
   }
 
-  // *********************** Work Starts Here
-
   /**
    * Determines if this tree is empty.
    * - Time: O(?).
@@ -118,7 +116,57 @@ class BinarySearchTree {
       : this.maxRecursive(current.right);
   }
 
-  // *********************** Work Ends Here
+  /**
+   * Determines if this tree contains the given searchVal.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {number} searchVal The number to search for in the node's data.
+   * @returns {boolean} Indicates if the searchVal was found.
+   */
+  contains(searchVal) {
+    let current = this.root;
+
+    while (current) {
+      if (current.data === searchVal) {
+        return true;
+      }
+
+      if (searchVal > current.data) {
+        current = current.right;
+      } else {
+        current = current.left;
+      }
+    }
+
+    return false;
+  }
+
+  /**
+   * Determines if this tree contains the given searchVal.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {number} searchVal The number to search for in the node's data.
+   * @returns {boolean} Indicates if the searchVal was found.
+   */
+  containsRecursive(searchVal, current = this.root) {
+    if (current === null) return false;
+    if (current.data === searchVal) return true;
+    return searchVal < current.data
+      ? this.containsRecursive(searchVal, current.left)
+      : this.containsRecursive(searchVal, current.right);
+  }
+
+  /**
+   * Calculates the range (max - min) from the given startNode.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {Node} startNode The node to start from to calculate the range.
+   * @returns {number|null} The range of this tree or a sub tree depending on if the
+   *    startNode is the root or not.
+   */
+  range(startNode = this.root) {
+    return !startNode ? null : this.max(startNode) - this.min(startNode);
+  }
 
   // Logs this tree horizontally with the root on the left.
   print(node = this.root, spaceCnt = 0, spaceIncr = 10) {
@@ -169,10 +217,29 @@ threeLevelTree.root.left.right = new BSTNode(6);
 threeLevelTree.root.right = new BSTNode(15);
 threeLevelTree.root.right.left = new BSTNode(13);
 
-console.log(threeLevelTree.min());
-console.log(threeLevelTree.minRecursive());
-console.log(threeLevelTree.max());
-console.log(threeLevelTree.maxRecursive());
+// console.log(threeLevelTree.min());
+// console.log(threeLevelTree.minRecursive());
+// console.log(threeLevelTree.max());
+// console.log(threeLevelTree.maxRecursive());
+
+console.log(oneNodeTree.range());
+console.log(twoLevelTree.range());
+console.log(threeLevelTree.range());
+
+console.log(threeLevelTree.contains(5));
+console.log(threeLevelTree.containsRecursive(5));
+console.log("");
+console.log(threeLevelTree.contains(27));
+console.log(threeLevelTree.containsRecursive(27));
+console.log("");
+console.log(threeLevelTree.contains(13));
+console.log(threeLevelTree.containsRecursive(13));
+console.log("");
+console.log(threeLevelTree.contains(2));
+console.log(threeLevelTree.containsRecursive(2));
+console.log("");
+console.log(threeLevelTree.contains(6));
+console.log(threeLevelTree.containsRecursive(6));
 
 /* fullTree
                       root
