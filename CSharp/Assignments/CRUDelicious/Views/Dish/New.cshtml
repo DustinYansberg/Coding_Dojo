@@ -1,0 +1,31 @@
+@model Dish
+
+<h1> Add a Dish to the Database</h1>
+<form asp-action="DishCreate" asp-controller="Dish" method="post">
+    <div class="mb-3">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-controller">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Chef"></label>
+        <input asp-for="Chef" class="form-controller">
+        <span asp-validation-for="Chef" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Tastiness"></label>
+        <input asp-for="Tastiness" class="form-controller">
+        <span asp-validation-for="Tastiness" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Calories"></label>
+        <input asp-for="Calories" class="form-controller">
+        <span asp-validation-for="Calories" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-controller"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <button class="btn btn-success">Add it!</button>
+</form>
