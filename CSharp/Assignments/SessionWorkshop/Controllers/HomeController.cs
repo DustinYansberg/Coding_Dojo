@@ -45,65 +45,97 @@ public class HomeController : Controller
         return RedirectToAction("Index");
     }
 
+    //? more clear naming conventions
     [HttpGet("Buttons")]
     public ViewResult Buttons()
     {
         return View("Buttons");
     }
 
-    [HttpPost("PlusOne")]
-    public IActionResult PlusOne()
+    [HttpGet("math/{op}/{val}")]
+    public IActionResult DoMath(string op, int val)
     {
+        System.Console.WriteLine("Here");
         int? CheckOldNum = HttpContext.Session.GetInt32("Number");
+
         if (CheckOldNum != null)
         {
             int OldNum = (int)CheckOldNum;
-            OldNum++;
+            if (op == "mul")
+            {
+                OldNum *= val;
+            }
+            else if (op == "add")
+            {
+                OldNum += val;
+            }
+            else if (op == "minus")
+            {
+                OldNum -= val;
+            }
+            else if (op == "rand")
+            {
+                OldNum += new Random().Next(1, val);
+            }
             HttpContext.Session.SetInt32("Number", OldNum);
         }
         return RedirectToAction("Buttons");
     }
 
-    [HttpPost("MinusOne")]
-    public IActionResult MinusOne()
-    {
-        int? CheckOldNum = HttpContext.Session.GetInt32("Number");
-        if (CheckOldNum != null)
-        {
-            int OldNum = (int)CheckOldNum;
-            OldNum--;
-            HttpContext.Session.SetInt32("Number", OldNum);
 
-        }
-        return RedirectToAction("Buttons");
-    }
+    //     [HttpPost("PlusOne")]
+    //     public IActionResult PlusOne()
+    //     {
+    //         int? CheckOldNum = HttpContext.Session.GetInt32("Number");
+    //         if (CheckOldNum != null)
+    //         {
+    //             int OldNum = (int)CheckOldNum;
+    //             OldNum++;
+    //             HttpContext.Session.SetInt32("Number", OldNum);
+    //         }
+    //         return RedirectToAction("Buttons");
+    //     }
 
-    [HttpPost("MultiplyByTwo")]
-    public IActionResult MultiplyByTwo()
-    {
-        int? CheckOldNum = HttpContext.Session.GetInt32("Number");
-        if (CheckOldNum != null)
-        {
-            int OldNum = (int)CheckOldNum;
-            OldNum *= 2;
-            HttpContext.Session.SetInt32("Number", OldNum);
-        }
-        return RedirectToAction("Buttons");
-    }
+    //     [HttpPost("MinusOne")]
+    //     public IActionResult MinusOne()
+    //     {
+    //         int? CheckOldNum = HttpContext.Session.GetInt32("Number");
+    //         if (CheckOldNum != null)
+    //         {
+    //             int OldNum = (int)CheckOldNum;
+    //             OldNum--;
+    //             HttpContext.Session.SetInt32("Number", OldNum);
 
-    [HttpPost("RandomPlus")]
-    public IActionResult RandomPlus()
-    {
-        int? CheckOldNum = HttpContext.Session.GetInt32("Number");
-        if (CheckOldNum != null)
-        {
-            int OldNum = (int)CheckOldNum;
-            OldNum += new Random().Next(1, 100);
-            HttpContext.Session.SetInt32("Number", OldNum);
-        }
+    //         }
+    //         return RedirectToAction("Buttons");
+    //     }
 
-        return RedirectToAction("Buttons");
-    }
+    //     [HttpPost("MultiplyByTwo")]
+    //     public IActionResult MultiplyByTwo()
+    //     {
+    //         int? CheckOldNum = HttpContext.Session.GetInt32("Number");
+    //         if (CheckOldNum != null)
+    //         {
+    //             int OldNum = (int)CheckOldNum;
+    //             OldNum *= 2;
+    //             HttpContext.Session.SetInt32("Number", OldNum);
+    //         }
+    //         return RedirectToAction("Buttons");
+    //     }
+
+    //     [HttpPost("RandomPlus")]
+    //     public IActionResult RandomPlus()
+    //     {
+    //         int? CheckOldNum = HttpContext.Session.GetInt32("Number");
+    //         if (CheckOldNum != null)
+    //         {
+    //             int OldNum = (int)CheckOldNum;
+    //             OldNum += new Random().Next(1, 100);
+    //             HttpContext.Session.SetInt32("Number", OldNum);
+    //         }
+
+    //         return RedirectToAction("Buttons");
+    //     }
 
     public IActionResult Logout()
     {

@@ -6,9 +6,10 @@
     HI @Name Your Number is @Num
 </h1>
 
-<form method="post">
-    <button formaction="PlusOne">+1</button>
-    <button formaction="MinusOne">-1</button>
-    <button formaction="MultiplyByTwo">&times; 2</button>
-    <button formaction="RandomPlus">+ Random</button>
+<form asp-action="DoMath" asp-route-op="add" asp-route-val="1" method="post">
+    <button>+1</button>
 </form>
+<a asp-action="DoMath" asp-route-op="add" asp-route-val="2" class="btn btn-success">+2</a>
+@* <button asp-route-val="1" asp-route-op="minus">-1</button>
+<button asp-route-val="2" asp-route-op="mul">&times; 2</button>
+<button asp-route-val="100" asp-route-op="rand">+ Random</button> *@
