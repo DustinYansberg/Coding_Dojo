@@ -1,0 +1,28 @@
+@model List<Chef>
+
+<h1 class="text-center">Check out our roster of chefs!</h1>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">age</th>
+            <th scope="col"> # of Dishes</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            foreach (Chef c in Model)
+            {
+                TimeSpan TS = DateTime.Now - c.DateOfBirth;
+                int Age = TS.Days / 365;
+                <tr>
+                    <td>@c.FirstName @c.LastName</td>
+                    <td>@Age</td>
+                    <td>@c.DishesChefMade.Count</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

@@ -1,0 +1,13 @@
+@model String;
+
+@{
+    if (Model == "Chef")
+    {
+        @await Html.PartialAsync("../Chef/_ChefTable")
+
+    }
+    else
+    {
+        @await Html.PartialAsync("../Dish/_DishTable")
+    }
+}
