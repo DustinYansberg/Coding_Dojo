@@ -1,0 +1,46 @@
+@model Product
+<div>
+    <h1 class="text-center mt-5 mb-5 pb-5">@Model.Name</h1>
+
+    <div class="d-flex flex-row gap-3 ">
+        <div class="text-start left flex-grow-1">
+            <h3 class="text-start">Associated Categories</h3>
+            <ul class="list-group">
+                @{
+                    foreach (Association a in Model.Associations)
+                    {
+                        <li class="list-group-item">
+                            <a asp-controller="Product" asp-action="ToggleCategoryAssociationToProduct"
+                                asp-route-productId="@a.ProductId" asp-route-categoryId="@a.CategoryId">
+                                @a.Category.Name
+                            </a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+
+        <div class="text-end flex-grow-1 border-start border-3 border-dark ps-3">
+            <h3 class="text-end">Categories To Add</h3>
+            <ul class="list-group">
+                @{
+                    foreach (Category c in ViewBag.UnassociatedCategories)
+                    {
+                        <li class="list-group-item">
+                            <a asp-controller="Product" asp-action="ToggleCategoryAssociationToProduct"
+                                asp-route-productId="@Model.ProductId" asp-route-categoryId="@c.CategoryId">
+                                @c.Name
+                            </a>
+                        </li>
+                    }
+                    if (ViewBag.UnassociatedCategories.Count == 0)
+                    {
+                        <li class="list-group-item">
+                            <p>No Categories Left!</p>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>

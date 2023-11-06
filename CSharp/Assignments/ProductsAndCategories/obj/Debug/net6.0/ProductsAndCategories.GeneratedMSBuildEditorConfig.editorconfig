@@ -15,16 +15,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\drfla\Documents\Coding_Dojo\CSharp\Assignments\ProductsAndCategories
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/drfla/Documents/Coding_Dojo/CSharp/Assignments/ProductsAndCategories/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/drfla/Documents/Coding_Dojo/CSharp/Assignments/ProductsAndCategories/Views/Category/_AddCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcX0FkZENhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drfla/Documents/Coding_Dojo/CSharp/Assignments/ProductsAndCategories/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/drfla/Documents/Coding_Dojo/CSharp/Assignments/ProductsAndCategories/Views/Category/_OneCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcX09uZUNhdGVnb3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/drfla/Documents/Coding_Dojo/CSharp/Assignments/ProductsAndCategories/Views/Product/_AddProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxfQWRkUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/drfla/Documents/Coding_Dojo/CSharp/Assignments/ProductsAndCategories/Views/Product/_OneProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxfT25lUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/drfla/Documents/Coding_Dojo/CSharp/Assignments/ProductsAndCategories/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/drfla/Documents/Coding_Dojo/CSharp/Assignments/ProductsAndCategories/Views/Shared/_Links.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MaW5rcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/drfla/Documents/Coding_Dojo/CSharp/Assignments/ProductsAndCategories/Views/Shared/_ValidationScriptsPartial.cshtml]

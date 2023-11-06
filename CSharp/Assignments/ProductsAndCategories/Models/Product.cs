@@ -21,7 +21,7 @@ public class Product
     [Range(0, float.MaxValue)]
     public float Price { get; set; }
 
-    public List<Association> Categories = new();
+    public List<Association> Associations { get; set; } = new();
 
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }

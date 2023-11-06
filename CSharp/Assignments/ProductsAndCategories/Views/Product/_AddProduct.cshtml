@@ -1,0 +1,50 @@
+@model Product
+
+<div class="d-flex flex-row gap-3 ">
+    <div class="left flex-grow-1">
+        <h3 class="text-center">
+            New Product
+        </h3>
+        <form asp-action="CreateProduct" asp-controller="Product">
+            <div class="mb-3">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control">
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Description"></label>
+                <input asp-for="Description" class="form-control">
+                <span asp-validation-for="Description"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Price"></label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input asp-for="Price" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-text">.00</span>
+                </div>
+                <span asp-validation-for="Price"></span>
+
+            </div>
+            <button class="btn btn-danger">Submit</button>
+        </form>
+
+    </div>
+
+    <div class="text-center flex-grow-1 border-start border-3 border-dark ps-3">
+        <h3 class="text-center">
+            All Products
+        </h3>
+        <ul class="list-group">
+            @{
+                foreach (Product p in ViewBag.AllProducts)
+                {
+                    <li class="list-group-item">
+                        <a asp-controller="Product" asp-action="OneProduct" asp-route-productId="@p.ProductId">@p.Name</a>
+                    </li>
+                }
+            }
+
+        </ul>
+    </div>
+</div>
