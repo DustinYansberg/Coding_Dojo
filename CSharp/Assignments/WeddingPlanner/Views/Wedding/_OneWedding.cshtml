@@ -1,0 +1,17 @@
+@model Wedding
+
+<div class="container">
+    <h3 class="row">@Model.WedderTwo & @Model.WedderOne's wedding</h3>
+    <p class="row">Date: @Model.WeddingDate.ToString("MMM dd yyyy")</p>
+    <div>
+        <p class="row">Guests:</p>
+        <ul class="list-group">
+            @{
+                foreach (Attendant a in Model.Guests)
+                {
+                    <li class="list-group-item">@a.User.FirstName @a.User.FirstName</li>
+                }
+            }
+        </ul>
+    </div>
+</div>

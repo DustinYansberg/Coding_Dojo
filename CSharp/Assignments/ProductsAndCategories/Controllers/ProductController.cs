@@ -46,18 +46,26 @@ public class ProductController : Controller
     public IActionResult OneProduct(int productId)
     {
 
-        List<Category> UnassociatedCategories = _context.Categories.ToList();
-        Product OneProduct = _context.Products
+        // List<Category> UnassociatedCategories = _context.Categories.ToList();
+        Product? OneProduct = _context.Products
                                            .Include(p => p.Associations)
                                            .ThenInclude(ass => ass.Category)
                                            .FirstOrDefault(p => p.ProductId == productId);
 
-        foreach (var association in OneProduct.Associations)
+        // foreach (var association in OneProduct.Associations)
+        // {
+        //     UnassociatedCategories.Remove(association.Category);
+        // }
+        List<Category> ExcludedCategories = _context.Categories
+                                                    .Where(c => c.Associations
+                                                    .All(a => a.ProductId != OneProduct.ProductId))
+                                                    .ToList();
+        foreach (Category c in ExcludedCategories)
         {
-            UnassociatedCategories.Remove(association.Category);
+            System.Console.WriteLine(c.Name);
         }
 
-        ViewBag.UnassociatedCategories = UnassociatedCategories;
+        ViewBag.UnassociatedCategories = ExcludedCategories;
 
         return View("_OneProduct", OneProduct);
     }
@@ -65,7 +73,8 @@ public class ProductController : Controller
     [HttpGet("products/{productId}/{categoryId}")]
     public IActionResult ToggleCategoryAssociationToProduct(int productId, int categoryId)
     {
-        bool AssExists = _context.Associations.Any(a => a.ProductId == productId && a.CategoryId == categoryId);
+        bool AssExists = _context.Associations
+                                 .Any(a => a.ProductId == productId && a.CategoryId == categoryId);
 
         if (!AssExists)
         {
@@ -78,7 +87,12 @@ public class ProductController : Controller
         }
         else
         {
-            Association assToDelete = _context.Associations.Where(a => a.CategoryId == categoryId && a.ProductId == productId).FirstOrDefault();
+            Association? assToDelete = _context.Associations
+                                               .Where(
+                                                      a => a.CategoryId == categoryId
+                                                      && a.ProductId == productId
+                                                     )
+                                               .FirstOrDefault();
             _context.Associations.Remove(assToDelete);
         }
         _context.SaveChanges();

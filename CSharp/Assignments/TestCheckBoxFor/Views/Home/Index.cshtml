@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@model TestCheckBoxFor.Models.UserModel
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <b>Want Additional Benefit: </b>
+
+    <br />
+    <span>Tea: </span> @Html.CheckBoxFor(m => m.Tea, true)
+    <span> | Loundry: </span> @Html.CheckBoxFor(m => m.Loundry, false)
+    <span> | Breakfast: </span> @Html.CheckBoxFor(m => m.Breakfast, false)
+}

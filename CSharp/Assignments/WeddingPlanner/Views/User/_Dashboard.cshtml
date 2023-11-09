@@ -1,0 +1,55 @@
+@model List<Wedding>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" class="t-head">Wedding Of</th>
+            <th scope="col" class="t-head">Date</th>
+            <th scope="col" class="t-head">Guest Count</th>
+            <th scope="col" class="t-head">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (Wedding w in Model)
+            {
+                <tr>
+                    <td>
+                        <a class="text-dark" asp-controller="Wedding" asp-action="OneWedding"
+                            asp-route-id="@w.WeddingId">@w.WedderOne & @w.WedderTwo</a>
+                    </td>
+                    <td>@w.WeddingDate.ToString("MMM dd, yyyy")</td>
+                    <td>@w.Guests.Count</td>
+                    @{
+                        if (Context.Session.GetInt32("UUID") == w.UserId)
+                        {
+                            <td>
+                                <form asp-controller="Wedding" asp-action="DeleteWedding" asp-route-weddingId="@w.WeddingId"
+                                    method="post">
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        }
+                        else
+                        {
+                            string RSVP = "RSVP";
+                            int i = 0;
+                            while (i < w.Guests.Count)
+                            {
+                                if (w.Guests[i].UserId == Context.Session.GetInt32("UUID"))
+                                {
+                                    RSVP = "Un-RSVP";
+                                    i = w.Guests.Count;
+                                }
+                                i++;
+                            }
+                            <td> <a asp-controller="User" asp-action="ToggleRSVP" asp-route-weddingId="@w.WeddingId"
+                                    asp-route-userId="@Context.Session.GetInt32("UUID")" class="btn btn-success">@RSVP</a></td>
+                        }
+                    }
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>

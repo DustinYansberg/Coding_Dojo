@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Login or Register</h1>
+</div>
+
+@* @await Html.PartialAsync("User/_Registration") *@
+<div class=" border d-flex flex-row justify-content-around pt-4 pb-4">
+    <div style="max-width: 50%">
+        @await Html.PartialAsync("_UserRegistration")
+    </div>
+    <div style="max-width: 50%">
+        @await Html.PartialAsync("_UserLogin")
+    </div>
+</div>
