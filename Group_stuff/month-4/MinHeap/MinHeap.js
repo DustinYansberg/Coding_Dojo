@@ -44,7 +44,9 @@ class MinHeap {
    * - Space: O(1) constant.
    * @returns {?number} Null if empty.
    */
-  top() {}
+  top() {
+    return this.heap.length > 1 ? this.heap[1] : null;
+  }
 
   /**
    * Inserts a new number into the heap and maintains the heaps order.
@@ -55,7 +57,19 @@ class MinHeap {
    * - Space: O(1) constant.
    * @param {number} num The num to add.
    */
-  insert(num) {}
+  insert(num) {
+    this.heap.push(num);
+    let idx = this.heap.length - 1;
+    while (idx > 1) {
+      let parentIdx = this.idxOfParent(idx);
+      if (this.heap[idx] < this.heap[parentIdx]) {
+        let temp = this.heap[idx];
+        this.heap[idx] = this.heap[parentIdx];
+        this.heap[parentIdx] = temp;
+      }
+      idx = parentIdx;
+    }
+  }
 
   /**
    * Logs the tree horizontally with the root on the left and the index in
@@ -77,3 +91,11 @@ class MinHeap {
     this.printHorizontalTree(parentIdx * 2, spaceCnt);
   }
 }
+
+const heap = new MinHeap();
+heap.insert(5);
+heap.insert(10);
+heap.insert(2);
+heap.insert(1);
+
+heap.printHorizontalTree();
