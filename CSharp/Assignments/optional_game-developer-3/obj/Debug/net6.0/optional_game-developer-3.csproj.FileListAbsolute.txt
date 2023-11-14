@@ -1,0 +1,15 @@
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\obj\Debug\net6.0\optional_game-developer-3.csproj.AssemblyReference.cache
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\obj\Debug\net6.0\optional_game-developer-3.GeneratedMSBuildEditorConfig.editorconfig
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\obj\Debug\net6.0\optional_game-developer-3.AssemblyInfoInputs.cache
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\obj\Debug\net6.0\optional_game-developer-3.AssemblyInfo.cs
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\obj\Debug\net6.0\optional_game-developer-3.csproj.CoreCompileInputs.cache
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\bin\Debug\net6.0\optional_game-developer-3.exe
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\bin\Debug\net6.0\optional_game-developer-3.deps.json
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\bin\Debug\net6.0\optional_game-developer-3.runtimeconfig.json
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\bin\Debug\net6.0\optional_game-developer-3.dll
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\bin\Debug\net6.0\optional_game-developer-3.pdb
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\obj\Debug\net6.0\optional_game-developer-3.dll
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\obj\Debug\net6.0\refint\optional_game-developer-3.dll
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\obj\Debug\net6.0\optional_game-developer-3.pdb
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\obj\Debug\net6.0\optional_game-developer-3.genruntimeconfig.cache
+D:\benji\Documents\coding-dojo\course_csharp\fundamentals\optional_game-developer-3\obj\Debug\net6.0\ref\optional_game-developer-3.dll
