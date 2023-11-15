@@ -157,30 +157,4 @@ class LinkedListStack {
   }
 }
 
-let testStack = new Stack();
-
-// console.log(testStack.push(2));
-// testStack.push(3);
-// testStack.push(4);
-// testStack.push(5);
-// testStack.push(1);
-
-// console.log(testStack.items);
-
-// console.log(testStack.pop());
-
-// console.log(testStack.items);
-
-// console.log(testStack.peek());
-// console.log(testStack.items);
-
-let lls = new LinkedListStack();
-console.log(lls.push(5));
-console.log(lls.push(34));
-console.log(lls.push(2));
-console.log(lls.push(1));
-
-console.log(lls.print());
-console.log(lls.pop());
-
-console.log(lls.print());
+modules.export = { Stack, LinkedListStack };
